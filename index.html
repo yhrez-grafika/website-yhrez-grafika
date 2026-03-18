@@ -1065,32 +1065,86 @@
       const waNotif = new Audio("./assets/sounds/notifikasi1.mp3");
       waNotif.preload = "auto";
       waNotif.volume = 0.5;
+      let audioSiapDiputar = false;
+      let tungguInteraksiUlang = false;
+
+      function unlockAudioSekali() {
+        if (audioSiapDiputar) return Promise.resolve();
+
+        waNotif.muted = true;
+        waNotif.currentTime = 0;
+
+        const unlockPromise = waNotif.play();
+        if (!unlockPromise || typeof unlockPromise.then !== "function") {
+          waNotif.pause();
+          waNotif.currentTime = 0;
+          waNotif.muted = false;
+          audioSiapDiputar = true;
+          return Promise.resolve();
+        }
+
+        return unlockPromise
+          .then(() => {
+            waNotif.pause();
+            waNotif.currentTime = 0;
+            waNotif.muted = false;
+            audioSiapDiputar = true;
+          })
+          .catch((err) => {
+            waNotif.muted = false;
+            throw err;
+          });
+      }
 
       function putarSuara() {
         console.log("Suara notifikasi sedang diputar!");
         waNotif.currentTime = 0;
-        waNotif.play().catch((err) => {
-          console.warn("Audio belum bisa diputar:", err);
-        });
+        const playPromise = waNotif.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch((err) => {
+            console.warn("Audio belum bisa diputar:", err);
+            tungguInteraksiUlang = true;
+          });
+        }
       }
 
       let notifikasiSudahDijadwalkan = false;
+
+      function tampilkanBubbleDanSuara() {
+        const waFloat = document.querySelector(".wa-float");
+        if (!waFloat) return;
+        waFloat.classList.add("show");
+        putarSuara();
+      }
 
       function jalankanNotifikasiAwal() {
         if (notifikasiSudahDijadwalkan) return;
         notifikasiSudahDijadwalkan = true;
 
-        const waFloat = document.querySelector(".wa-float");
-        if (!waFloat) return;
+        unlockAudioSekali()
+          .catch(() => {})
+          .finally(() => {
+            setTimeout(() => {
+              tampilkanBubbleDanSuara();
+            }, 3000);
+          });
+      }
 
-        setTimeout(() => {
-          waFloat.classList.add("show");
-          putarSuara();
-        }, 3000);
+      function cobaPutarSaatInteraksiUlang() {
+        if (!tungguInteraksiUlang) return;
+        tungguInteraksiUlang = false;
+        unlockAudioSekali()
+          .catch(() => {})
+          .finally(() => {
+            putarSuara();
+          });
       }
 
       window.addEventListener("click", jalankanNotifikasiAwal, { once: true });
       window.addEventListener("scroll", jalankanNotifikasiAwal, { once: true, passive: true });
+      window.addEventListener("click", cobaPutarSaatInteraksiUlang, { passive: true });
+      window.addEventListener("scroll", cobaPutarSaatInteraksiUlang, { passive: true });
+      window.addEventListener("touchstart", cobaPutarSaatInteraksiUlang, { passive: true });
     </script>
   </body>
 </html>
