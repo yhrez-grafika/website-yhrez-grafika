@@ -205,11 +205,19 @@
           </div>
         </div>
 
-        <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Buka Menu Navigasi">
+        <div
+          class="menu-toggle"
+          id="mobile-menu"
+          role="button"
+          tabindex="0"
+          aria-label="Buka Menu Navigasi"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
           <i class="fas fa-bars"></i>
         </div>
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
           <li><a href="#home">Beranda</a></li>
           <li><a href="#featured">Produk</a></li>
           <li><a href="#testimonials">Testimoni</a></li>
@@ -219,6 +227,7 @@
               href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh'rez%20Grafika,%20saya%20tertarik%20dengan%20Promo%20yang%20ada%20di%20website.%20Bisa%20minta%20info%20lebih%20lanjut?"
               class="btn-wa-nav"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i class="fab fa-whatsapp"></i> Chat Admin
             </a>
@@ -231,7 +240,7 @@
       <header class="hero" id="home">
         <img
           src="images/hero/hero-bg.webp"
-          alt="Galeri pengerjaan percetakan Yh'rez Grafika"
+          alt=""
           class="hero-bg-image"
           width="800"
           height="360"
@@ -276,6 +285,87 @@
           </div>
         </div>
       </header>
+
+      <section class="catalog-section" id="katalog-produk">
+        <div class="catalog-container">
+          <div class="section-title catalog-title">
+            <span>KATALOG PRODUK</span>
+            <h2>Layanan Cetak Yh'rez Grafika</h2>
+            <p>Katalog layanan utama percetakan Yh'rez Grafika di Palangka Raya. Siap bantu kebutuhan kampus, kantor, hingga UMKM.</p>
+            <div class="line"></div>
+          </div>
+
+          <div class="catalog-grid">
+            <article class="catalog-card">
+              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-file-alt"></i></div>
+              <h3>Cetak Dokumen</h3>
+              <ul class="catalog-list">
+                <li>HVS 70/80gr</li>
+                <li>Hitam Putih &amp; Warna</li>
+                <li>Cetak cepat untuk tugas &amp; laporan</li>
+              </ul>
+              <a
+                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20pesan%20layanan%20Cetak%20Dokumen.%20Bisa%20minta%20info%20harga%20dan%20waktu%20proses%3F"
+                class="catalog-wa-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pesan via WhatsApp</a
+              >
+            </article>
+
+            <article class="catalog-card">
+              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-book"></i></div>
+              <h3>Jilid</h3>
+              <ul class="catalog-list">
+                <li>Hardcover Skripsi</li>
+                <li>Spiral &amp; Mika</li>
+                <li>Lakban untuk dokumen kerja</li>
+              </ul>
+              <a
+                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20mau%20pesan%20layanan%20Jilid%20(Hardcover%2C%20Spiral%2C%20Mika%2C%20Lakban).%20Bisa%20dibantu%3F"
+                class="catalog-wa-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pesan via WhatsApp</a
+              >
+            </article>
+
+            <article class="catalog-card">
+              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-id-card"></i></div>
+              <h3>Kartu</h3>
+              <ul class="catalog-list">
+                <li>ID Card PVC</li>
+                <li>Kartu Mahasiswa</li>
+                <li>Kartu Nama profesional</li>
+              </ul>
+              <a
+                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20pesan%20produk%20Kartu%20(ID%20Card%20PVC%2C%20Kartu%20Mahasiswa%2C%20Kartu%20Nama).%20Bisa%20minta%20detail%20harganya%3F"
+                class="catalog-wa-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pesan via WhatsApp</a
+              >
+            </article>
+
+            <article class="catalog-card">
+              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-images"></i></div>
+              <h3>Lainnya</h3>
+              <ul class="catalog-list">
+                <li>Cetak Foto</li>
+                <li>Poster ukuran custom</li>
+                <li>Stiker Label untuk produk</li>
+              </ul>
+              <a
+                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20pesan%20layanan%20lainnya%20(Cetak%20Foto%2C%20Poster%2C%20Stiker%20Label).%20Boleh%20minta%20penawaran%3F"
+                class="catalog-wa-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pesan via WhatsApp</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
 
       <div class="running-wrapper">
         <div class="running-track">
@@ -489,6 +579,7 @@
               <a
                 href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh'rez%20Grafika,%20saya%20tertarik%20dengan%20Promo%20yang%20ada%20di%20website.%20Bisa%20minta%20info%20lebih%20lanjut?"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-promo"
                 >Chat WhatsApp</a
               >
@@ -508,6 +599,7 @@
               <a
                 href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh'rez%20Grafika,%20saya%20tertarik%20dengan%20Promo%20yang%20ada%20di%20website.%20Bisa%20minta%20info%20lebih%20lanjut?"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-promo"
                 >Chat WhatsApp</a
               >
@@ -534,6 +626,7 @@
               <a
                 href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh'rez%20Grafika,%20saya%20tertarik%20dengan%20Promo%20yang%20ada%20di%20website.%20Bisa%20minta%20info%20lebih%20lanjut?"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-promo"
                 >Chat WhatsApp</a
               >
@@ -553,6 +646,7 @@
               <a
                 href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yhrez%20Grafika,%20saya%20tertarik%20promo%20Jilid%20Skripsi%20Mahasiswa"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-promo"
                 >Chat WhatsApp</a
               >
@@ -572,6 +666,7 @@
               <a
                 href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yhrez%20Grafika,%20saya%20mau%20tanya%20tentang%20promo%20Cetak%20Buku%20Booklet"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-promo"
                 >Chat WhatsApp</a
               >
@@ -591,6 +686,7 @@
               <a
                 href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yhrez%20Grafika,%20saya%20ingin%20tanya%20layanan%20Jilid%20Spiral%20Kawat"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-promo"
                 >Chat WhatsApp</a
               >
@@ -839,6 +935,7 @@
               <a
                 href="https://www.instagram.com/yh_rezplk/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="social-link"
                 aria-label="Kunjungi Instagram Kami"
                 style="
@@ -855,7 +952,12 @@
                 "
                 ><i class="fab fa-instagram"></i> Instagram</a
               >
-              <a href="https://www.facebook.com/JulianGrafis/" target="_blank" class="social-link facebook" aria-label="Kunjungi Facebook Kami"
+              <a
+                href="https://www.facebook.com/JulianGrafis/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link facebook"
+                aria-label="Kunjungi Facebook Kami"
                 ><i class="fab fa-facebook-f"></i> Facebook</a
               >
             </div>
@@ -906,6 +1008,7 @@
       href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh'rez%20Grafika,%20saya%20ingin%20tanya-tanya%20dulu%20nih."
       class="wa-float"
       target="_blank"
+      rel="noopener noreferrer"
       aria-label="Chat WhatsApp Admin"
     >
       <span class="wa-float-text">Hai kak, ada yang bisa kami bantu..?</span>

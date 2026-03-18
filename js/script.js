@@ -3,15 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 1. Smooth Scrolling untuk link navigasi
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    const href = anchor.getAttribute("href");
+    if (!href || href === "#") return;
+
     anchor.addEventListener("click", function (e) {
+      const targetId = href.slice(1);
+      if (!targetId) return;
+
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 80, // Ruang untuk navbar
-          behavior: "smooth",
-        });
-      }
+      window.scrollTo({
+        top: target.offsetTop - 80, // Ruang untuk navbar
+        behavior: "smooth",
+      });
     });
   });
 
@@ -29,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const y = window.scrollY;
     const shouldCompact = y > 100;
 
-    if (shouldCompact !== navCompact) {
+    if (nav && shouldCompact !== navCompact) {
       navCompact = shouldCompact;
       if (navCompact) {
         nav.classList.add("navbar-scrolled");
@@ -73,25 +79,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
 
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("active");
+    const syncMenuIcon = (isOpen) => {
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
       const icon = menuToggle.querySelector("i");
       if (icon) {
-        icon.classList.toggle("fa-bars");
-        icon.classList.toggle("fa-times");
+        icon.classList.toggle("fa-bars", !isOpen);
+        icon.classList.toggle("fa-times", isOpen);
       }
+    };
+
+    const closeMenu = () => {
+      navLinks.classList.remove("active");
+      syncMenuIcon(false);
+    };
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("active");
+      syncMenuIcon(isOpen);
+    });
+
+    menuToggle.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      const isOpen = navLinks.classList.toggle("active");
+      syncMenuIcon(isOpen);
     });
 
     document.querySelectorAll(".nav-links a").forEach((link) => {
       link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        const icon = menuToggle.querySelector("i");
-        if (icon) {
-          icon.classList.add("fa-bars");
-          icon.classList.remove("fa-times");
-        }
+        closeMenu();
       });
     });
+
+    syncMenuIcon(false);
   }
 
   // 4. Reveal Animation Menggunakan Intersection Observer (lebih ringan)
@@ -159,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const customMessage = btn.getAttribute("data-message");
       const message = customMessage || (productName ? `Halo, saya ingin pesan ${productName} di Yh'rez Grafika.` : "");
       if (message) {
-        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
+        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
       }
     });
   });
