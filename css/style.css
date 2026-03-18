@@ -177,8 +177,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(38, 38, 38, 0.7);
+  background: transparent;
   z-index: 1;
+  pointer-events: none;
 }
 .hero-content {
   position: relative;
@@ -1611,7 +1612,7 @@ footer h3 span {
     align-items: center !important;
     width: max-content !important;
     gap: 50px !important;
-    animation: clients-marquee-left 25s linear infinite !important;
+    animation: clients-marquee-left 22s linear infinite !important;
     will-change: transform;
   }
 
@@ -1632,7 +1633,7 @@ footer h3 span {
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
     gap: 30px !important;
-    animation-duration: 18s !important;
+    animation-duration: 22s !important;
   }
 
   .clients-track img {
@@ -1795,7 +1796,6 @@ footer h3 span {
 
 /* --- Mobile Performance Guard: kurangi animasi non-kritis --- */
 @media (max-width: 768px), (hover: none), (pointer: coarse) {
-  .clients-track,
   .about-slide.active {
     animation: none !important;
   }
