@@ -367,6 +367,43 @@
         </div>
       </section>
 
+      <section class="advantages-section" id="keunggulan-kami">
+        <div class="catalog-container">
+          <div class="section-title advantages-title">
+            <span>KEUNGGULAN KAMI</span>
+            <h2>Alasan Memilih Yh'rez Grafika</h2>
+            <p>Layanan percetakan cepat, presisi, dan ramah mahasiswa untuk kebutuhan kampus, organisasi, maupun UMKM.</p>
+            <div class="line"></div>
+          </div>
+
+          <div class="advantages-grid">
+            <article class="adv-card">
+              <div class="adv-icon" aria-hidden="true"><i class="fas fa-print"></i></div>
+              <h3>Hasil Cetak Tajam</h3>
+              <p>Detail teks dan warna lebih jelas untuk dokumen, presentasi, hingga materi promosi.</p>
+            </article>
+
+            <article class="adv-card">
+              <div class="adv-icon" aria-hidden="true"><i class="fas fa-wallet"></i></div>
+              <h3>Harga Mahasiswa</h3>
+              <p>Tarif bersahabat dengan kualitas terjaga, cocok untuk tugas kuliah dan kebutuhan harian.</p>
+            </article>
+
+            <article class="adv-card">
+              <div class="adv-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+              <h3>Pengerjaan Kilat</h3>
+              <p>Proses cepat dan rapi, beberapa layanan bisa ditunggu sesuai antrean dan jenis pesanan.</p>
+            </article>
+
+            <article class="adv-card">
+              <div class="adv-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+              <h3>Lokasi Strategis</h3>
+              <p>Dekat area kampus Palangka Raya, mudah dijangkau untuk mahasiswa dan pekerja.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <div class="running-wrapper">
         <div class="running-track">
           <div class="running-text">
@@ -867,33 +904,6 @@
         </div>
       </section>
 
-      <section class="features-section" id="keunggulan">
-        <div class="features-container">
-          <div class="features-title">
-            <span class="subtitle">KEUNGGULAN KAMI</span>
-            <h2>Mengapa Pilih Yh'rez Grafika</h2>
-            <p>Solusi cetak dan jilid andalan mahasiswa, instansi, dan UMKM di Palangka Raya.</p>
-          </div>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-              <h3>Pengerjaan Cepat</h3>
-              <p>Tugas kuliah atau dokumen mendadak? Kami proses dengan cepat dan tepat waktu tanpa mengurangi kualitas cetakan.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon"><i class="fas fa-wallet"></i></div>
-              <h3>Harga Mahasiswa</h3>
-              <p>Berlokasi dekat kampus, kami menawarkan harga yang sangat bersaing dan pas di kantong mahasiswa maupun UMKM lokal.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
-              <h3>Praktis via WhatsApp</h3>
-              <p>Tidak perlu antre lama. Cukup kirimkan file dokumen atau skripsi Anda melalui WhatsApp, kami cetak, dan Anda tinggal ambil.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="contact-section-new" id="contact">
         <div class="contact-container-new">
           <div class="title-left">
@@ -1049,6 +1059,65 @@
         "url": "https://yhrezgrafika.com",
         "logo": "https://yhrezgrafika.com/images/logosaya/google.webp"
       }
+    </script>
+    <script>
+      (() => {
+        const waFloat = document.querySelector(".wa-float");
+        if (!waFloat) return;
+
+        const notifAudio = new Audio("./assets/sounds/notifikasi1.mp3");
+        notifAudio.preload = "auto";
+        notifAudio.volume = 0.5;
+
+        let hasPlayed = false;
+        let waitingUserInteraction = false;
+        let bubbleShownOnce = false;
+
+        const interactionEvents = ["click", "scroll"];
+
+        const removeInteractionListeners = () => {
+          interactionEvents.forEach((eventName) => {
+            window.removeEventListener(eventName, playOnFirstInteraction);
+          });
+        };
+
+        const playSound = () => {
+          if (hasPlayed) return;
+
+          notifAudio.currentTime = 0;
+          notifAudio
+            .play()
+            .then(() => {
+              hasPlayed = true;
+              waitingUserInteraction = false;
+              removeInteractionListeners();
+            })
+            .catch(() => {
+              if (!waitingUserInteraction) {
+                waitingUserInteraction = true;
+                interactionEvents.forEach((eventName) => {
+                  window.addEventListener(eventName, playOnFirstInteraction, { passive: true });
+                });
+              }
+            });
+        };
+
+        const playOnFirstInteraction = () => {
+          playSound();
+        };
+
+        setTimeout(() => {
+          if (!bubbleShownOnce) {
+            bubbleShownOnce = true;
+            waFloat.classList.add("show");
+            setTimeout(() => {
+              waFloat.classList.remove("show");
+            }, 3200);
+          }
+
+          playSound();
+        }, 2500);
+      })();
     </script>
   </body>
 </html>

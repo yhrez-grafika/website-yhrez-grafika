@@ -406,6 +406,65 @@ section {
   transform: translateY(-2px);
 }
 
+/* KEUNGGULAN KAMI */
+.advantages-section {
+  background: #ffffff;
+  padding-top: 36px;
+}
+
+.advantages-title p {
+  max-width: 760px;
+  margin: 8px auto 0;
+  color: #2f4b82;
+  font-weight: 600;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.adv-card {
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.adv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+}
+
+.adv-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.adv-card h3 {
+  color: #163d96;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.adv-card p {
+  color: #334155;
+  line-height: 1.6;
+}
+
 /* RUNNING TEXT */
 .running-wrapper {
   background: #d50202;
@@ -677,8 +736,8 @@ section {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: #25d366;
-  color: #fff;
+  background-color: #25d366 !important;
+  color: #ffffff !important;
   width: 65px;
   height: 65px;
   min-width: 65px;
@@ -705,8 +764,8 @@ section {
   right: calc(100% + 10px);
   top: 50%;
   transform: translateY(-50%) translateX(8px);
-  background: #ffffff;
-  color: #14653b;
+  background-color: #25d366;
+  color: #ffffff;
   padding: 8px 12px;
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
@@ -1337,6 +1396,16 @@ footer h3 span {
     width: 48px;
     height: 48px;
     font-size: 1.2rem;
+  }
+
+  .adv-card {
+    padding: 20px;
+  }
+
+  .adv-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.15rem;
   }
 
   .running-wrapper + .seasonal-promo-section {
