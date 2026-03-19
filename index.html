@@ -3,19 +3,11 @@
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-32X026181B"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-32X026181B");
-    </script>
+    <script src="js/analytics-init.js" defer></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" as="image" href="images/hero/hero-bg.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/hero/herobaru.webp" type="image/webp" fetchpriority="high" />
 
     <title>Yh'rez Grafika | Pusat Area Percetakan Mahasiswa & Jilid Skripsi Palangka Raya</title>
     <link rel="icon" href="https://yhrezgrafika.com/images/logosaya/favicon.png" type="image/png" />
@@ -42,141 +34,12 @@
     <link rel="preload" as="image" href="images/logosaya/logo.webp" type="image/webp" fetchpriority="high" />
 
     <link rel="stylesheet" href="css/all.min.css" />
-    <noscript><link rel="stylesheet" href="css/all.min.css" /></noscript>
+    <link rel="stylesheet" href="css/head-inline.css" />
+    <noscript><link rel="stylesheet" href="css/all.min.css" /> <link rel="stylesheet" href="css/head-inline.css" /></noscript>
 
     <link rel="icon" type="image/webp" href="images/logosaya/logo.webp" />
     <link rel="apple-touch-icon" href="images/logosaya/logo.webp" />
-
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        line-height: 1.6;
-        color: #121212;
-        background: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      #main-nav {
-        position: sticky;
-        top: 0;
-        z-index: 99999;
-        background: rgba(255, 255, 255, 0.35);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-      .nav-container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      .brand-logo {
-        width: 55px;
-        aspect-ratio: 525 / 564;
-        height: auto;
-        display: block;
-      }
-      .hero {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 100px 20px;
-        color: #fff;
-        min-height: 85svh;
-      }
-      .hero-bg-image {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-      }
-      .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: transparent;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        min-height: 500px;
-      }
-      .hero-logo {
-        width: 120px;
-        aspect-ratio: 525 / 564;
-        height: auto;
-        display: block;
-        margin-bottom: 20px;
-      }
-      .hero h1 {
-        font-size: 3.5rem;
-        max-width: 900px;
-        margin: 0 0 20px;
-        line-height: 1.1;
-      }
-      .hero p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 0 auto 40px;
-      }
-      @media (max-width: 768px) {
-        .hero {
-          min-height: 72svh;
-          padding: 100px 15px 50px;
-        }
-        .hero-content {
-          min-height: 440px;
-        }
-        .hero h1 {
-          font-size: 1.8rem;
-        }
-        .hero p {
-          font-size: 0.95rem;
-          margin-bottom: 25px;
-        }
-      }
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-    </style>
-    <link
-      rel="preload"
-      href="css/style.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
+    <link rel="stylesheet" href="css/style.min.css" />
     <noscript><link rel="stylesheet" href="css/style.min.css" /></noscript>
   </head>
   <body>
@@ -240,48 +103,49 @@
     <main id="main-content">
       <header class="hero" id="home">
         <img
-          src="images/hero/hero-bg.webp"
-          alt=""
+          src="images/hero/herobaru.webp"
+          alt="Percetakan Yh'rez Grafika Palangkaraya"
           class="hero-bg-image"
           width="800"
           height="360"
           loading="eager"
           decoding="async"
           fetchpriority="high"
-          aria-hidden="true"
         />
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <img
-            src="images/logosaya/logo.webp"
-            class="hero-logo"
-            alt="Logo Yh'rez Grafika"
-            width="525"
-            height="564"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
-          <h1>Pusat Cetak Kampus <br /><span>& Jilid Skripsi Cepat</span></h1>
-          <p>
-            Solusi Cetak Dokumen, Jilid Skripsi, Laporan Praktikum, Cetak Foto, ID Card Panitia, hingga Stiker Event. Harga bersahabat, pengerjaan
-            rapi, dan bisa pesan via WhatsApp tanpa antre..!
-          </p>
-          <div class="hero-btns">
-            <a href="#featured" class="btn-primary">Lihat Produk</a>
-            <a
-              href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Yh'rez%20Grafika,%20saya%20ingin%20Konsultasi%20Gratis%20tentang%20jasa%20cetak.%20Bisa%20bantu%20saya?"
-              class="btn-outline"
-              >Konsultasi Gratis</a
-            >
-          </div>
-          <div class="hero-hours">
-            <div class="hours-box">
-              <h2 class="sr-only">Informasi Operasional</h2>
-              <h3><i class="far fa-clock" style="margin-right: 8px"></i> Jam Operasional</h3>
-              <p>Senin - Sabtu : 08.00 WIB - 21.00 WIB</p>
-              <p>Minggu : 12.00 WIB - 21.00 WIB</p>
-              <div id="tanggal-hari"></div>
+          <div class="hero-copy">
+            <img
+              src="images/logosaya/logo.webp"
+              alt="Logo Yh'rez Grafika"
+              class="hero-logo"
+              width="525"
+              height="564"
+              loading="eager"
+              decoding="async"
+            />
+            <h1>Pusat Cetak Kampus &amp; Jilid Skripsi Cepat</h1>
+            <p>
+              Solusi Cetak Dokumen, Jilid Skripsi, Laporan Praktikum, Cetak Foto, ID Card Panitia, hingga Stiker Event. Harga bersahabat, pengerjaan
+              rapi, dan bisa pesan via WhatsApp tanpa antre..!
+            </p>
+            <div class="hero-btns">
+              <a href="#katalog-produk" class="btn-primary">Lihat Produk</a>
+              <a
+                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika,%20saya%20ingin%20konsultasi%20gratis%20untuk%20kebutuhan%20cetak%20saya."
+                class="btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Konsultasi Gratis</a
+              >
+            </div>
+            <div class="hero-hours">
+              <div class="hours-box">
+                <h3>Jam Operasional</h3>
+                <p>Senin - Sabtu: 08.00 - 21.00 WIB</p>
+                <p>Minggu: 12.00 - 21.00 WIB</p>
+                <p id="tanggal-hari" aria-live="polite"></p>
+              </div>
             </div>
           </div>
         </div>
@@ -423,7 +287,7 @@
                 class="catalog-wa-btn"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Pesan via WhatsApp</a
+                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
               >
             </article>
 
@@ -440,7 +304,7 @@
                 class="catalog-wa-btn"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Pesan via WhatsApp</a
+                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
               >
             </article>
 
@@ -457,7 +321,7 @@
                 class="catalog-wa-btn"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Pesan via WhatsApp</a
+                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
               >
             </article>
 
@@ -474,7 +338,7 @@
                 class="catalog-wa-btn"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Pesan via WhatsApp</a
+                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
               >
             </article>
           </div>
@@ -947,20 +811,8 @@
                 href="https://www.instagram.com/yh_rezplk/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="social-link"
+                class="social-link instagram-link"
                 aria-label="Kunjungi Instagram Kami"
-                style="
-                  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-                  color: white !important;
-                  text-decoration: none;
-                  padding: 12px 25px;
-                  border-radius: 8px;
-                  font-weight: bold;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 8px;
-                "
                 ><i class="fab fa-instagram"></i> Instagram</a
               >
               <a
@@ -981,7 +833,7 @@
                 title="Lokasi Toko Percetakan Yh'rez Grafika"
                 width="100%"
                 height="250"
-                style="border: 0"
+                class="map-embed"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
@@ -1061,90 +913,6 @@
         "logo": "https://yhrezgrafika.com/images/logosaya/google.webp"
       }
     </script>
-    <script>
-      const waNotif = new Audio("./assets/sounds/notifikasi1.mp3");
-      waNotif.preload = "auto";
-      waNotif.volume = 0.5;
-      let audioSiapDiputar = false;
-      let tungguInteraksiUlang = false;
-
-      function unlockAudioSekali() {
-        if (audioSiapDiputar) return Promise.resolve();
-
-        waNotif.muted = true;
-        waNotif.currentTime = 0;
-
-        const unlockPromise = waNotif.play();
-        if (!unlockPromise || typeof unlockPromise.then !== "function") {
-          waNotif.pause();
-          waNotif.currentTime = 0;
-          waNotif.muted = false;
-          audioSiapDiputar = true;
-          return Promise.resolve();
-        }
-
-        return unlockPromise
-          .then(() => {
-            waNotif.pause();
-            waNotif.currentTime = 0;
-            waNotif.muted = false;
-            audioSiapDiputar = true;
-          })
-          .catch((err) => {
-            waNotif.muted = false;
-            throw err;
-          });
-      }
-
-      function putarSuara() {
-        console.log("Suara notifikasi sedang diputar!");
-        waNotif.currentTime = 0;
-        const playPromise = waNotif.play();
-        if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch((err) => {
-            console.warn("Audio belum bisa diputar:", err);
-            tungguInteraksiUlang = true;
-          });
-        }
-      }
-
-      let notifikasiSudahDijadwalkan = false;
-
-      function tampilkanBubbleDanSuara() {
-        const waFloat = document.querySelector(".wa-float");
-        if (!waFloat) return;
-        waFloat.classList.add("show");
-        putarSuara();
-      }
-
-      function jalankanNotifikasiAwal() {
-        if (notifikasiSudahDijadwalkan) return;
-        notifikasiSudahDijadwalkan = true;
-
-        unlockAudioSekali()
-          .catch(() => {})
-          .finally(() => {
-            setTimeout(() => {
-              tampilkanBubbleDanSuara();
-            }, 3000);
-          });
-      }
-
-      function cobaPutarSaatInteraksiUlang() {
-        if (!tungguInteraksiUlang) return;
-        tungguInteraksiUlang = false;
-        unlockAudioSekali()
-          .catch(() => {})
-          .finally(() => {
-            putarSuara();
-          });
-      }
-
-      window.addEventListener("click", jalankanNotifikasiAwal, { once: true });
-      window.addEventListener("scroll", jalankanNotifikasiAwal, { once: true, passive: true });
-      window.addEventListener("click", cobaPutarSaatInteraksiUlang, { passive: true });
-      window.addEventListener("scroll", cobaPutarSaatInteraksiUlang, { passive: true });
-      window.addEventListener("touchstart", cobaPutarSaatInteraksiUlang, { passive: true });
-    </script>
+    <script src="js/wa-notif.js" defer></script>
   </body>
 </html>

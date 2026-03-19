@@ -24,16 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Navbar Animation & Scroll Effect
   const nav = document.getElementById("main-nav");
   const waFloat = document.querySelector(".wa-float");
+  const NAV_COMPACT_OFFSET = 24;
   const WA_SHOW_DELAY = 1200;
   const WA_HIDE_IDLE_DELAY = 2200;
   let waShowTimer = null;
   let waHideTimer = null;
 
   let navCompact = false;
+  let scrollTicking = false;
 
-  const onScroll = () => {
-    const y = window.scrollY;
-    const shouldCompact = y > 100;
+  const applyScrollEffects = () => {
+    const y = window.scrollY || document.documentElement.scrollTop;
+    const shouldCompact = y > NAV_COMPACT_OFFSET;
 
     if (nav && shouldCompact !== navCompact) {
       navCompact = shouldCompact;
@@ -70,8 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
       waFloat.classList.remove("show");
     }
   };
+  const onScroll = () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      applyScrollEffects();
+      scrollTicking = false;
+    });
+  };
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  window.addEventListener("orientationchange", onScroll, { passive: true });
   onScroll();
 
   // 3. Menu Mobile Toggle
@@ -115,15 +127,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 4. Reveal Animation Menggunakan Intersection Observer (lebih ringan)
-  const revealElements = document.querySelectorAll(".product-card, .testimonial-card, .portfolio-item");
+  const revealElements = document.querySelectorAll(".catalog-card, .product-card, .testimonial-card, .portfolio-item");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (window.matchMedia("(max-width: 768px)").matches || !("IntersectionObserver" in window)) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     revealElements.forEach((el) => {
       el.style.opacity = "1";
       el.style.transform = "none";
       el.style.transition = "none";
     });
   } else {
+    const revealThreshold = window.matchMedia("(max-width: 768px)").matches ? 0.1 : 0.15;
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -135,13 +149,16 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.15 },
+      {
+        threshold: revealThreshold,
+        rootMargin: "0px 0px -8% 0px",
+      },
     );
 
     revealElements.forEach((el) => {
       el.style.opacity = "0";
-      el.style.transform = "translateY(30px)";
-      el.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
+      el.style.transform = "translateY(24px)";
+      el.style.transition = "opacity 0.55s ease-out, transform 0.55s ease-out";
       revealObserver.observe(el);
     });
   }
