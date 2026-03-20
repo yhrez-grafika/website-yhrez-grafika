@@ -407,13 +407,14 @@ section {
 
 .catalog-list {
   list-style: none;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   padding: 0;
 }
 
 .catalog-list li {
   color: #334155;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  line-height: 1.42;
   padding-left: 18px;
   position: relative;
 }
@@ -1915,7 +1916,8 @@ footer h3 span {
 
   .catalog-list li {
     font-size: 0.95rem;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+    line-height: 1.32;
   }
 
   .catalog-wa-btn {
@@ -2129,5 +2131,54 @@ footer h3 span {
 
   .map-box iframe {
     min-height: 280px;
+  }
+}
+
+/* Mobile advantages: show 2 cards per row */
+@media (max-width: 768px) {
+  .advantages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .adv-card {
+    padding: 14px !important;
+    border-radius: 12px !important;
+  }
+
+  .adv-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .adv-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .adv-card p {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 420px) {
+  .advantages-grid {
+    gap: 10px !important;
+  }
+
+  .adv-card {
+    padding: 12px !important;
+  }
+
+  .adv-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .adv-card p {
+    font-size: 0.76rem;
   }
 }
