@@ -1884,6 +1884,32 @@ footer h3 span {
   }
 }
 
+/* --- Mobile Width Tweak: Produk Unggulan lebih lebar --- */
+@media (max-width: 768px) {
+  .featured-section,
+  .promo-section,
+  .portfolio-section {
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+  }
+
+  .product-grid,
+  .promo-grid,
+  .portfolio-grid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .featured-section,
+  .promo-section,
+  .portfolio-section {
+    padding-left: 2.5% !important;
+    padding-right: 2.5% !important;
+  }
+}
+
 /* Force WhatsApp icon color in catalog button */
 .catalog-wa-btn .wa-icon {
   color: #25d366 !important;
