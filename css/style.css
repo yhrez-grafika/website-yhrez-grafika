@@ -1808,6 +1808,12 @@ footer h3 span {
   height: auto !important;
 }
 
+.about-slider .about-slide {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
 .promo-image,
 .product-img {
   aspect-ratio: 4 / 3 !important;
@@ -1839,8 +1845,8 @@ footer h3 span {
 
 @media (max-width: 768px) {
   .about-slider {
-    aspect-ratio: 4 / 3 !important;
-    min-height: 260px !important;
+    aspect-ratio: 3 / 4 !important;
+    min-height: 320px !important;
   }
 
   .clients-track img {

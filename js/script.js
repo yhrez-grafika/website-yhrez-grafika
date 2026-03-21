@@ -191,6 +191,11 @@ document.addEventListener("DOMContentLoaded", () => {
   waButtons.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
+      const directHref = btn.getAttribute("href");
+      if (directHref && directHref !== "#") {
+        window.open(directHref, "_blank", "noopener,noreferrer");
+        return;
+      }
       const card = btn.closest(".product-card");
       const productName = btn.getAttribute("data-product") || card?.querySelector("h3")?.textContent?.trim();
       const customMessage = btn.getAttribute("data-message");
