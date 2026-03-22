@@ -1,5 +1,28 @@
 ﻿/* Extracted from inline <style> in index.html for CSP hardening */
 
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/poppins-v24-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../webfonts/roboto-v51-latin-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../webfonts/roboto-v51-latin-900.woff2") format("woff2");
+  font-display: swap;
+}
 /* block 1 */
 html,
       body {
@@ -10,7 +33,19 @@ html,
         line-height: 1.6;
         color: #121212;
         background: #fff;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Poppins", Arial, Helvetica, sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+      }
+      .brand-name,
+      .about-content h2,
+      footer h3 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
       }
       #main-nav {
         position: sticky;
@@ -376,4 +411,5 @@ html,
 .map-embed {
   border: 0;
 }
+
 

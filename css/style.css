@@ -13,6 +13,30 @@
   --white: #ffffff;
 }
 
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/poppins-v24-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../webfonts/roboto-v51-latin-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../webfonts/roboto-v51-latin-900.woff2") format("woff2");
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,7 +44,21 @@ body {
   line-height: 1.6;
   color: var(--dark);
   background: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.brand-name,
+.about-content h2,
+footer h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
 }
 
 /* TOP BAR */
@@ -109,6 +147,7 @@ body {
   flex-direction: column;
 }
 .brand-name {
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: 1.3rem;
   color: #2b33b8;
