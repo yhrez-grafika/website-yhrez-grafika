@@ -13,12 +13,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Locator</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <style>
       html,
       body {
@@ -51,19 +51,33 @@
     </style>
     <script>
       const CONFIGURATION = {
-        "locations": [
-          {"title":"Jl. Sangga Buana II Selatan No.1","address1":"Jl. Sangga Buana II Selatan No.1","address2":"Palangka, Kec. Jekan Raya, Kota Palangka Raya, Kalimantan Tengah 74874, Indonesia","coords":{"lat":-2.2091166211656046,"lng":113.90486829732764},"placeId":"ChIJ63_hgWaz_C0RFGNvyhkLZis"}
+        locations: [
+          {
+            title: "Jl. Sangga Buana II Selatan No.1",
+            address1: "Jl. Sangga Buana II Selatan No.1",
+            address2: "Palangka, Kec. Jekan Raya, Kota Palangka Raya, Kalimantan Tengah 74874, Indonesia",
+            coords: { lat: -2.2091166211656046, lng: 113.90486829732764 },
+            placeId: "ChIJ63_hgWaz_C0RFGNvyhkLZis",
+          },
         ],
-        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17,"mapId":""},
-        "mapsApiKey": "YOUR_API_KEY_HERE",
-        "capabilities": {"input":false,"autocomplete":false,"directions":false,"distanceMatrix":false,"details":false,"actions":false}
+        mapOptions: {
+          center: { lat: 38.0, lng: -100.0 },
+          fullscreenControl: true,
+          mapTypeControl: false,
+          streetViewControl: false,
+          zoom: 4,
+          zoomControl: true,
+          maxZoom: 17,
+          mapId: "",
+        },
+        mapsApiKey: "YOUR_API_KEY_HERE",
+        capabilities: { input: false, autocomplete: false, directions: false, distanceMatrix: false, details: false, actions: false },
       };
-
     </script>
     <script type="module">
-      document.addEventListener('DOMContentLoaded', async () => {
-        await customElements.whenDefined('gmpx-store-locator');
-        const locator = document.querySelector('gmpx-store-locator');
+      document.addEventListener("DOMContentLoaded", async () => {
+        await customElements.whenDefined("gmpx-store-locator");
+        const locator = document.querySelector("gmpx-store-locator");
         locator.configureFromQuickBuilder(CONFIGURATION);
       });
     </script>
