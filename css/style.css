@@ -61,40 +61,6 @@ footer h3 {
   font-weight: 900;
 }
 
-/* TOP BAR */
-.top-bar {
-  height: 34px;
-  overflow: hidden;
-  background: linear-gradient(90deg, #1f6f43 0%, #2f7f4f 50%, #bfa046 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-}
-
-.top-bar-track {
-  display: flex;
-  white-space: nowrap;
-  width: max-content;
-  animation: topbar-scroll 14s linear infinite;
-}
-
-.top-bar-track span {
-  display: inline-block;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  padding-right: 48px;
-}
-
-@keyframes topbar-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 /* NAVBAR */
 /* --- MENU NAVIGASI ANTI-GAGAL (STICKY HEADER) --- */
 #main-nav {
@@ -383,111 +349,9 @@ section {
   border-radius: 10px;
 }
 
-/* KATALOG PRODUK */
-.catalog-section {
-  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
-}
-
-.catalog-container {
+.section-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.catalog-title p {
-  max-width: 760px;
-  margin: 8px auto 0;
-  color: #24427d;
-  font-weight: 600;
-}
-
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
-
-.catalog-card {
-  background: #ffffff;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.catalog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
-}
-
-.catalog-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 12px;
-  background: #2563eb;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
-  margin-bottom: 14px;
-}
-
-.catalog-card h3 {
-  color: #163d96;
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-}
-
-.catalog-list {
-  list-style: none;
-  margin: 0 0 18px;
-  padding: 0;
-}
-
-.catalog-list li {
-  color: #334155;
-  margin-bottom: 6px;
-  line-height: 1.42;
-  padding-left: 18px;
-  position: relative;
-}
-
-.catalog-list li::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: #2563eb;
-  position: absolute;
-  top: 0.62em;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.catalog-wa-btn {
-  margin-top: auto;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  background: #2563eb;
-  color: #ffffff !important;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-weight: 700;
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.catalog-wa-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
 }
 
 /* KEUNGGULAN KAMI */
@@ -700,42 +564,6 @@ section {
   text-decoration: none;
   font-weight: bold;
   margin-top: auto;
-}
-
-.seasonal-promo-section {
-  background: linear-gradient(180deg, #fffef7 0%, #ffffff 100%);
-}
-
-.running-wrapper + .seasonal-promo-section {
-  padding-top: 56px;
-}
-
-.seasonal-promo-section .section-title {
-  margin-bottom: 40px;
-}
-
-.seasonal-promo-section .promo-grid {
-  align-items: stretch;
-}
-
-.seasonal-promo-section .promo-card {
-  height: 100%;
-}
-
-.seasonal-subtitle {
-  margin: 8px auto 0;
-  max-width: 760px;
-  color: #49603f;
-  font-weight: 600;
-}
-
-.seasonal-card {
-  border: 1px solid rgba(194, 153, 47, 0.25);
-  box-shadow: 0 8px 24px rgba(40, 90, 42, 0.08);
-}
-
-.seasonal-badge {
-  background: linear-gradient(135deg, #2f7f4f, #c2a046);
 }
 
 /* TESTIMONIAL */
@@ -1227,77 +1055,6 @@ footer h3 span {
   transform: translateY(-2px);
 }
 
-/* --- GAYA SECTION KEUNGGULAN --- */
-.features-section {
-  padding: 80px 20px;
-  background-color: #f9f9fc;
-  text-align: center;
-}
-.features-container {
-  max-width: 1000px;
-  margin: auto;
-}
-.features-title {
-  margin-bottom: 50px;
-}
-.features-title .subtitle {
-  color: #d13045;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.features-title h2 {
-  font-size: 2.5rem;
-  color: #1a1a1a;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-.features-title p {
-  color: #666;
-  font-size: 1.1rem;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-.feature-card {
-  background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  border-bottom: 4px solid transparent;
-}
-.feature-card:hover {
-  transform: translateY(-10px);
-  border-bottom: 4px solid #d13045;
-}
-.feature-icon {
-  width: 70px;
-  height: 70px;
-  background-color: #fcf0f2;
-  color: #d13045;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 20px auto;
-}
-.feature-card h3 {
-  font-size: 1.3rem;
-  color: #222;
-  margin-bottom: 15px;
-}
-.feature-card p {
-  color: #666;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
 /* --- GAYA PORTOFOLIO / HASIL CETAK --- */
 .portfolio-grid {
   display: grid;
@@ -1464,20 +1221,6 @@ footer h3 span {
     margin: 15px 0;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .catalog-card {
-    padding: 20px;
-  }
-
-  .catalog-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 1.2rem;
-  }
-
   .adv-card {
     padding: 20px;
   }
@@ -1486,17 +1229,6 @@ footer h3 span {
     width: 48px;
     height: 48px;
     font-size: 1.15rem;
-  }
-
-  .running-wrapper + .seasonal-promo-section {
-    padding-top: 40px;
-  }
-
-  .seasonal-promo-section .section-title {
-    margin-bottom: 28px;
-  }
-  .features-section {
-    padding: 50px 15px !important;
   }
 
   .contact-section-new {
@@ -1739,7 +1471,6 @@ footer h3 span {
     max-width: 100%;
     height: auto;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -1949,55 +1680,6 @@ footer h3 span {
   }
 }
 
-/* Force WhatsApp icon color in catalog button */
-.catalog-wa-btn .wa-icon {
-  color: #25d366 !important;
-}
-
-/* Catalog WhatsApp button final style (green like requested) */
-.catalog-wa-btn {
-  background: #22c55e !important;
-  border: 1px solid #22c55e !important;
-  color: #ffffff !important;
-}
-
-.catalog-wa-btn:hover {
-  background: #16a34a !important;
-  border-color: #16a34a !important;
-}
-
-.catalog-wa-btn .wa-icon {
-  color: #ffffff !important;
-}
-
-/* Mobile catalog: show 2 cards per row */
-@media (max-width: 768px) {
-  .catalog-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
-  }
-
-  .catalog-card {
-    padding: 14px !important;
-  }
-
-  .catalog-card h3 {
-    font-size: 1.06rem;
-  }
-
-  .catalog-list li {
-    font-size: 0.95rem;
-    margin-bottom: 4px;
-    line-height: 1.32;
-  }
-
-  .catalog-wa-btn {
-    width: 100%;
-    padding: 10px 8px !important;
-    font-size: 0.9rem;
-  }
-}
-
 /* Mobile portfolio: keep 2 columns and smaller thumbnails */
 @media (max-width: 768px) {
   .portfolio-grid {
@@ -2091,43 +1773,36 @@ footer h3 span {
 
 /* Mobile promo sections: show 2 cards per row */
 @media (max-width: 768px) {
-  .promo-grid,
-  .seasonal-promo-section .promo-grid {
+  .promo-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px !important;
   }
 
-  .promo-card,
-  .seasonal-promo-section .promo-card {
+  .promo-card {
     border-radius: 12px !important;
   }
 
-  .promo-image,
-  .seasonal-promo-section .promo-image {
+  .promo-image {
     height: 120px !important;
   }
 
-  .promo-content,
-  .seasonal-promo-section .promo-content {
+  .promo-content {
     padding: 12px !important;
   }
 
-  .promo-content h3,
-  .seasonal-promo-section .promo-content h3 {
+  .promo-content h3 {
     font-size: 1rem;
     margin-bottom: 8px;
   }
 
-  .promo-content p,
-  .seasonal-promo-section .promo-content p {
+  .promo-content p {
     font-size: 0.84rem;
     line-height: 1.4;
     margin-bottom: 10px;
   }
 
-  .promo-content .btn-promo,
-  .seasonal-promo-section .promo-content .btn-promo {
+  .promo-content .btn-promo {
     width: 100%;
     padding: 9px 8px !important;
     font-size: 0.88rem;
@@ -2135,23 +1810,19 @@ footer h3 span {
 }
 
 @media (max-width: 420px) {
-  .promo-grid,
-  .seasonal-promo-section .promo-grid {
+  .promo-grid {
     gap: 10px !important;
   }
 
-  .promo-image,
-  .seasonal-promo-section .promo-image {
+  .promo-image {
     height: 108px !important;
   }
 
-  .promo-content h3,
-  .seasonal-promo-section .promo-content h3 {
+  .promo-content h3 {
     font-size: 0.95rem;
   }
 
-  .promo-content p,
-  .seasonal-promo-section .promo-content p {
+  .promo-content p {
     font-size: 0.8rem;
   }
 }

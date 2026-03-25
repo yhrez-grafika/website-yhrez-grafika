@@ -1,8 +1,7 @@
 ﻿<!doctype html>
 <html lang="id">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=AW-16501611888"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=AW-16501611888"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -12,8 +11,24 @@
 
       gtag("config", "AW-16501611888");
     </script>
+
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-16501611888/Mt0ECKmeoI8cEPC6yrw9",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+
     <!-- Google tag (gtag.js) -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-32X026181B"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-32X026181B"></script>
     <script src="js/analytics-init.js" defer></script>
 
     <meta charset="UTF-8" />
@@ -25,7 +40,7 @@
     <meta name="facebook-domain-verification" content="w2eqti1k7hc63nn1yizlidp41iuj1r" />
     <meta
       name="description"
-      content="Pusat layanan cetak dokumen, tugas kuliah, dan jilid buku/skripsi terdekat bagi mahasiswa di Palangka Raya. Pengerjaan cepat, rapi, dan bisa pesan via WA!.."
+      content="Percetaka Yh'rez Grafika Palangkaraya. Melayani cetak dokumen, kartu nama, stempel, undangan dengan hasil berkualitas & Harga terjangkau. Pesan sekarang!"
     />
     <meta
       name="keywords"
@@ -53,13 +68,6 @@
     <noscript><link rel="stylesheet" href="css/style.min.css" /></noscript>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-track">
-        <span>Menerima Pesanan Stiker &amp; Kartu Lebaran - Proses Cepat!</span>
-        <span aria-hidden="true">Menerima Pesanan Stiker &amp; Kartu Lebaran - Proses Cepat!</span>
-      </div>
-    </div>
-
     <nav id="main-nav">
       <div class="nav-container">
         <div class="brand">
@@ -93,19 +101,11 @@
 
         <ul class="nav-links" id="primary-navigation">
           <li><a href="#home">Beranda</a></li>
-          <li><a href="#featured">Produk</a></li>
+          <li><a href="tentangkami.html">Tentang Kami</a></li>
+          <li><a href="katalog.html">Produk</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
           <li><a href="#testimonials">Testimoni</a></li>
           <li><a href="#contact">Kontak</a></li>
-          <li class="nav-cta">
-            <a
-              href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh'rez%20Grafika,%20saya%20tertarik%20dengan%20Promo%20yang%20ada%20di%20website.%20Bisa%20minta%20info%20lebih%20lanjut?"
-              class="btn-wa-nav"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-whatsapp"></i> Chat Admin
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -140,14 +140,21 @@
               rapi, dan bisa pesan via WhatsApp tanpa antre..!
             </p>
             <div class="hero-btns">
-              <a href="#katalog-produk" class="btn-primary">Lihat Produk</a>
+              <a href="katalog.html" class="btn-primary">Lihat Produk</a>
               <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika,%20saya%20ingin%20konsultasi%20gratis%20untuk%20kebutuhan%20cetak%20saya."
-                class="btn-outline"
+                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika,%20saya%20ingin%20konsultasi%20gratis%20untuk%20cetak..."
+                class="btn-primary"
+                style="background-color: #25d366; border-color: #25d366"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Konsultasi Gratis</a
+                onclick="
+                  return gtag_report_conversion(
+                    'https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20konsultasi%20gratis%20untuk%20kebutuhan%20cetak%20saya.',
+                  );
+                "
               >
+                Tanya via WhatsApp
+              </a>
             </div>
             <div class="hero-hours">
               <div class="hours-box">
@@ -173,295 +180,6 @@
           </div>
         </div>
       </div>
-
-      <section class="about-section">
-        <div class="about-container">
-          <div class="about-image reveal">
-            <div class="about-slider">
-              <img
-                src="images/profil/profil-1.webp"
-                class="about-slide active"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="375"
-                height="500"
-              />
-              <img
-                src="images/profil/profil-6.webp"
-                class="about-slide"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="375"
-                height="500"
-              />
-              <img
-                src="images/profil/profil-5.webp"
-                class="about-slide"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="333"
-                height="500"
-              />
-              <img
-                src="images/profil/profil-10.webp"
-                class="about-slide"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="476"
-                height="500"
-              />
-              <img
-                src="images/profil/profil-9.webp"
-                class="about-slide"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="494"
-                height="500"
-              />
-              <img
-                src="images/profil/profil-2.webp"
-                class="about-slide"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="375"
-                height="500"
-              />
-              <img
-                src="images/profil/profil-3.webp"
-                class="about-slide"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="375"
-                height="500"
-              />
-              <img
-                src="images/profil/profil-8.webp"
-                class="about-slide"
-                alt="Galeri pengerjaan percetakan Yh'rez Grafika"
-                loading="lazy"
-                decoding="async"
-                width="500"
-                height="375"
-              />
-            </div>
-          </div>
-          <div class="about-content reveal">
-            <span class="about-kicker">TENTANG KAMI</span>
-            <h2>Yh'rez Grafika</h2>
-            <p>
-              Yh'rez Grafika hadir sejak tahun 2024 sebagai sahabat percetakan andalan bagi mahasiswa, dosen, dan organisasi kampus di Kota Palangka
-              Raya. Berawal dari niat untuk membantu kelancaran tugas akademik, kami berkomitmen memberikan hasil cetak yang rapi, cepat, dan pastinya
-              ramah di kantong.
-            </p>
-            <p>
-              Kami sangat memahami bahwa waktu adalah hal yang berharga, terutama saat deadline skripsi atau persiapan acara kampus sudah di depan
-              mata. Oleh karena itu, kami fokus melayani jilid skripsi, cetak dokumen, pembuatan ID Card kepanitiaan, hingga stiker event dengan
-              pelayanan yang responsif dan praktis.
-            </p>
-            <div class="about-highlights">
-              <span class="about-tag">Harga Mahasiswa</span>
-              <span class="about-tag">Pengerjaan Cepat</span>
-              <span class="about-tag">Praktis via WhatsApp</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="catalog-section" id="katalog-produk">
-        <div class="catalog-container">
-          <div class="section-title catalog-title">
-            <span>KATALOG PRODUK</span>
-            <h2>Layanan Cetak Yh'rez Grafika</h2>
-            <p>Katalog layanan utama percetakan Yh'rez Grafika di Palangka Raya. Siap bantu kebutuhan kampus, kantor, hingga UMKM.</p>
-            <div class="line"></div>
-          </div>
-
-          <div class="catalog-grid">
-            <article class="catalog-card">
-              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-file-alt"></i></div>
-              <h3>Cetak Dokumen</h3>
-              <ul class="catalog-list">
-                <li>HVS 70/80gr</li>
-                <li>Hitam Putih &amp; Warna</li>
-                <li>Cetak cepat untuk tugas &amp; laporan</li>
-              </ul>
-              <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20pesan%20layanan%20Cetak%20Dokumen.%20Bisa%20minta%20info%20harga%20dan%20waktu%20proses%3F"
-                class="catalog-wa-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
-              >
-            </article>
-
-            <article class="catalog-card">
-              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-book"></i></div>
-              <h3>Jilid</h3>
-              <ul class="catalog-list">
-                <li>Hardcover Skripsi</li>
-                <li>Spiral &amp; Mika</li>
-                <li>Lakban untuk dokumen kerja</li>
-              </ul>
-              <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20mau%20pesan%20layanan%20Jilid%20(Hardcover%2C%20Spiral%2C%20Mika%2C%20Lakban).%20Bisa%20dibantu%3F"
-                class="catalog-wa-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
-              >
-            </article>
-
-            <article class="catalog-card">
-              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-id-card"></i></div>
-              <h3>Kartu</h3>
-              <ul class="catalog-list">
-                <li>ID Card PVC</li>
-                <li>Kartu Mahasiswa</li>
-                <li>Kartu Nama profesional</li>
-              </ul>
-              <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20pesan%20produk%20Kartu%20(ID%20Card%20PVC%2C%20Kartu%20Mahasiswa%2C%20Kartu%20Nama).%20Bisa%20minta%20detail%20harganya%3F"
-                class="catalog-wa-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
-              >
-            </article>
-
-            <article class="catalog-card">
-              <div class="catalog-icon" aria-hidden="true"><i class="fas fa-images"></i></div>
-              <h3>Lainnya</h3>
-              <ul class="catalog-list">
-                <li>Cetak Foto</li>
-                <li>Poster ukuran custom</li>
-                <li>Stiker Label untuk produk</li>
-              </ul>
-              <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20pesan%20layanan%20lainnya%20(Cetak%20Foto%2C%20Poster%2C%20Stiker%20Label).%20Boleh%20minta%20penawaran%3F"
-                class="catalog-wa-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i> Pesan via WhatsApp</a
-              >
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="advantages-section" id="keunggulan-kami">
-        <div class="catalog-container">
-          <div class="section-title advantages-title">
-            <span>KEUNGGULAN KAMI</span>
-            <h2>Alasan Memilih Yh'rez Grafika</h2>
-            <p>Layanan percetakan cepat, presisi, dan ramah mahasiswa untuk kebutuhan kampus, organisasi, maupun UMKM.</p>
-            <div class="line"></div>
-          </div>
-
-          <div class="advantages-grid">
-            <article class="adv-card">
-              <div class="adv-icon" aria-hidden="true"><i class="fas fa-print"></i></div>
-              <h3>Hasil Cetak Tajam</h3>
-              <p>Detail teks dan warna lebih jelas untuk dokumen, presentasi, hingga materi promosi.</p>
-            </article>
-
-            <article class="adv-card">
-              <div class="adv-icon" aria-hidden="true"><i class="fas fa-wallet"></i></div>
-              <h3>Harga Mahasiswa</h3>
-              <p>Tarif bersahabat dengan kualitas terjaga, cocok untuk tugas kuliah dan kebutuhan harian.</p>
-            </article>
-
-            <article class="adv-card">
-              <div class="adv-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
-              <h3>Pengerjaan Kilat</h3>
-              <p>Proses cepat dan rapi, beberapa layanan bisa ditunggu sesuai antrean dan jenis pesanan.</p>
-            </article>
-
-            <article class="adv-card">
-              <div class="adv-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
-              <h3>Lokasi Strategis</h3>
-              <p>Dekat area kampus Palangka Raya, mudah dijangkau untuk mahasiswa dan pekerja.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="promo-section seasonal-promo-section" id="seasonal-ramadan">
-        <div class="section-title">
-          <span>PROGRAM MUSIMAN</span>
-          <h2>Edisi Spesial Ramadan &amp; Idulfitri</h2>
-          <p class="seasonal-subtitle">
-            Bikin produk kue kering, toples, dan hampers tampil lebih premium. Cetak stiker bahan waterproof dengan hasil warna tajam dan potong
-            presisi agar brand Anda langsung terlihat profesional.
-          </p>
-          <div class="line"></div>
-        </div>
-        <div class="promo-grid">
-          <div class="promo-card seasonal-card">
-            <span class="promo-badge seasonal-badge">RAMADAN</span>
-            <div class="promo-image">
-              <img
-                src="images/promo/Stickerramadhan.webp"
-                alt="Stiker Kemasan UMKM untuk kue kering, toples, dan hampers"
-                loading="lazy"
-                decoding="async"
-                width="795"
-                height="600"
-              />
-            </div>
-            <div class="promo-content">
-              <h3>Sticker Label Ramadan</h3>
-              <p>
-                Jadikan setiap toples kue kering dan hampers Anda lebih berkesan! Cetak stiker label berkualitas tinggi dengan bahan Vinyl Waterproof
-                yang tahan air dan tidak mudah sobek. Hasil warna super tajam dengan potongan Kiss-Cut presisi, siap membuat brand UMKM Anda tampil
-                sekelas produk mall. Pesan sekarang, proses cepat tanpa antre!
-              </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20tertarik%20dengan%20promo%20Stiker%20Label%20Ramadan%20untuk%20kemasan%20produk%20saya.%20Bisa%20minta%20info%20harga%20dan%20minimal%20order%3F"
-                class="btn-wa"
-                data-product="Promo Stiker Kemasan Ramadan"
-                data-message="Halo Admin Yh'rez Grafika, saya tertarik dengan promo Stiker Label Ramadan untuk kemasan produk saya. Bisa minta info harga dan minimal order?"
-                >Chat Via WhatsApp</a
-              >
-            </div>
-          </div>
-
-          <div class="promo-card seasonal-card">
-            <span class="promo-badge seasonal-badge">IDULFITRI 1447H</span>
-            <div class="promo-image">
-              <img
-                src="images/promo/kartuidulfitri.webp"
-                alt="Kartu Ucapan Idulfitri custom untuk hampers"
-                loading="lazy"
-                decoding="async"
-                width="800"
-                height="600"
-              />
-            </div>
-            <div class="promo-content">
-              <h3>Kartu Ucapan Idulfitri</h3>
-              <p>
-                Sampaikan ketulusan hati melalui Kartu Ucapan Idulfitri yang eksklusif. Menggunakan bahan premium Art Paper / BW yang tebal dan mewah
-                saat disentuh. Kualitas cetak standar tinggi memastikan desain Anda terlihat elegan dan berkelas. Sempurna untuk pelengkap hampers
-                pribadi maupun bingkisan korporat. Bisa custom desain sesukamu!
-              </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika%2C%20saya%20ingin%20tanya-tanya%20tentang%20cetak%20Kartu%20Ucapan%20Idulfitri%20custom%20untuk%20hampers.%20Ada%20pilihan%20bahan%20apa%20saja%20ya%3F"
-                class="btn-wa"
-                data-product="Promo Kartu Ucapan Idulfitri"
-                data-message="Halo Admin Yh'rez Grafika, saya ingin tanya-tanya tentang cetak Kartu Ucapan Idulfitri custom untuk hampers. Ada pilihan bahan apa saja ya?"
-                >Chat Via WhatsApp</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section class="promo-section">
         <div class="section-title">
@@ -489,12 +207,16 @@
                 tugas akhir. <br />Proses cepat, <strong>harga bersahabat</strong> khusus mahasiswa!
               </p>
               <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover%20untuk%20skripsi%2Flaporan.%20Berapa%20ya%20harganya%3F"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
           <div class="promo-card">
@@ -509,12 +231,16 @@
                 jalan, atau tanda terima bisnis Anda.
               </p>
               <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20harga%20cetak%20Nota%20NCR%2FSurat%20Jalan.%20Saya%20lihat%20dari%20Google..."
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
           <div class="promo-card">
@@ -536,12 +262,16 @@
                 dudukan kokoh, tersedia berbagai pilihan bahan.
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh'rez%20Grafika,%20saya%20tertarik%20dengan%20Promo%20yang%20ada%20di%20website.%20Bisa%20minta%20info%20lebih%20lanjut?"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
           <div class="promo-card">
@@ -556,12 +286,16 @@
                 yang tahan lama. Harga <strong>paling bersahabat</strong> di kantong mahasiswa!
               </p>
               <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover%20untuk%20skripsi%2Flaporan.%20Berapa%20ya%20harganya%3F"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
           <div class="promo-card">
@@ -576,12 +310,16 @@
                 profil usaha atau laporan kegiatan dengan budget efisien!
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yhrez%20Grafika,%20saya%20mau%20tanya%20tentang%20promo%20Cetak%20Buku%20Booklet"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
           <div class="promo-card">
@@ -596,12 +334,16 @@
                 bengkok. <br />Ideal untuk modul kuliah, portofolio, atau agenda kerja!
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yhrez%20Grafika,%20saya%20ingin%20tanya%20layanan%20Jilid%20Spiral%20Kawat"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
           <div class="promo-card">
@@ -616,12 +358,16 @@
                 warung, dan UMKM agar pelanggan lebih cepat memilih dan nilai transaksi meningkat.
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika,%20saya%20ingin%20pesan%20cetak%20Daftar%20Menu.%20Bisa%20minta%20info%20harga%20dan%20pilihan%20bahannya?"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
           <div class="promo-card">
@@ -636,200 +382,20 @@
                 untuk personal branding, networking, dan memperkuat kepercayaan calon pelanggan.
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika,%20saya%20ingin%20pesan%20Kartu%20Nama%20custom.%20Bisa%20minta%20info%20harga%20dan%20opsi%20finishing?"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
+                  );
+                "
                 class="btn-promo"
-                >Chat WhatsApp</a
               >
+                Chat WhatsApp
+              </a>
             </div>
           </div>
         </div>
       </section>
-      <section class="portfolio-section" id="portfolio">
-        <div class="section-title">
-          <span>HASIL CETAK KAMI</span>
-          <h2>Karya & Portofolio</h2>
-          <div class="line"></div>
-        </div>
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <img src="images/portfolio/jilidskripsi.webp" alt="Jilid Skripsi" loading="lazy" decoding="async" width="900" height="1200" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio/notakacamataoptik.webp" alt="Cetak Nota" loading="lazy" decoding="async" width="873" height="1200" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio/stickercutting1.webp" alt="Cutting Sticker" loading="lazy" decoding="async" width="900" height="1200" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio/kartunama1.webp" alt="Kartu Nama" loading="lazy" decoding="async" width="1328" height="2306" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio/stempel.webp" alt="Pembuatan Stempel" loading="lazy" decoding="async" width="900" height="1200" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio/packaging.webp" alt="Stiker Kemasan" loading="lazy" decoding="async" width="774" height="1200" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio/bukuspiral.webp" alt="Buku Spiral" loading="lazy" decoding="async" width="900" height="1200" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio/kwitansi.webp" alt="Cetak Kwitansi" loading="lazy" decoding="async" width="900" height="1200" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/produk/daftarmenu.webp" alt="Cetak Daftar Menu" loading="lazy" decoding="async" width="800" height="600" />
-          </div>
-          <div class="portfolio-item">
-            <img src="images/produk/kwitansi.webp" alt="Produk Kwitansi" loading="lazy" decoding="async" width="800" height="600" />
-          </div>
-        </div>
-      </section>
-
-      <section class="featured-section" id="featured">
-        <div class="section-title">
-          <span>LAYANAN KAMI</span>
-          <h2>Produk Unggulan</h2>
-          <div class="line"></div>
-        </div>
-        <div class="filter-buttons"></div>
-        <div class="product-grid">
-          <div class="product-card" data-category="jilid">
-            <div class="product-img">
-              <img src="images/produk/softcover.webp" alt="Jilid Softcover" loading="lazy" decoding="async" width="800" height="600" />
-            </div>
-            <div class="product-info">
-              <h3>Jilid Softcover</h3>
-              <p>Jilid rapi, kuat, presisi. Cocok untuk tugas akhir, laporan magang, atau skripsi mahasiswa.</p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover%20untuk%20skripsi%2Flaporan.%20Berapa%20ya%20harganya%3F"
-                class="btn-wa"
-                data-product="Jilid Softcover"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Pesan via WA</a
-              >
-            </div>
-          </div>
-          <div class="product-card" data-category="cetak">
-            <div class="product-img">
-              <img src="images/produk/nota.webp" alt="Cetak Nota" loading="lazy" decoding="async" width="800" height="600" />
-            </div>
-            <div class="product-info">
-              <h3>Cetak Nota / Surat Jalan</h3>
-              <p>Nota NCR rangkap tanpa karbon. Praktis untuk invoice toko atau tanda terima bisnis Anda.</p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20harga%20cetak%20Nota%20NCR%2FSurat%20Jalan.%20Saya%20lihat%20dari%20Google..."
-                class="btn-wa"
-                data-product="Cetak Nota"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Pesan via WA</a
-              >
-            </div>
-          </div>
-          <div class="product-card" data-category="stiker">
-            <div class="product-img">
-              <img src="images/produk/sticker-kemasan.webp" alt="Stiker Kemasan" loading="lazy" decoding="async" width="795" height="600" />
-            </div>
-            <div class="product-info">
-              <h3>Stiker Label Kemasan</h3>
-              <p>Bikin produk UMKM Anda makin premium dengan stiker potong pola presisi dan warna tajam.</p>
-              <a href="#" class="btn-wa" data-product="Stiker Kemasan">Pesan via WA</a>
-            </div>
-          </div>
-          <div class="product-card" data-category="lainnya">
-            <div class="product-img">
-              <img src="images/produk/stempel.webp" alt="Stempel Flash" loading="lazy" decoding="async" width="804" height="603" />
-            </div>
-            <div class="product-info">
-              <h3>Stempel Flash Otomatis</h3>
-              <p>Praktis tanpa bantalan tinta, hasil cap lebih tajam dan tersedia berbagai macam warna tinta.</p>
-              <a href="#" class="btn-wa" data-product="Stempel Otomatis">Pesan via WA</a>
-            </div>
-          </div>
-          <div class="product-card" data-category="cetak">
-            <div class="product-img">
-              <img src="images/produk/Brosur.webp" alt="Cetak Brosur" loading="lazy" decoding="async" width="602" height="427" />
-            </div>
-            <div class="product-info">
-              <h3>Cetak Brosur / Flyer</h3>
-              <p>Media promosi efektif untuk bisnis Anda. Hasil cetak tajam, warna cerah, dan harga pas untuk mahasiswa.</p>
-              <a href="#" class="btn-wa" data-product="Cetak Brosur">Pesan via WA</a>
-            </div>
-          </div>
-          <div class="product-card" data-category="lainnya">
-            <div class="product-img">
-              <img src="images/produk/plakat-akrilik.webp" alt="Plakat Akrilik" loading="lazy" decoding="async" width="490" height="600" />
-            </div>
-            <div class="product-info">
-              <h3>Plakat Akrilik Custom</h3>
-              <p>Cocok untuk souvenir, penghargaan, atau kenang-kenangan event kampus. Potongan rapi dan presisi.</p>
-              <a href="#" class="btn-wa" data-product="Plakat Akrilik Custom">Pesan via WA</a>
-            </div>
-          </div>
-          <div class="product-card" data-category="lainnya">
-            <div class="product-img">
-              <img src="images/produk/mendali1.webp" alt="Mendali Custom" loading="lazy" decoding="async" width="800" height="600" />
-            </div>
-            <div class="product-info">
-              <h3>Mendali Custom</h3>
-              <p>
-                Solusi penghargaan untuk lomba, event sekolah, dan komunitas. Finishing rapi dengan detail tajam agar momen prestasi terlihat lebih
-                berkelas.
-              </p>
-              <a href="#" class="btn-wa" data-product="Mendali Custom">Pesan via WA</a>
-            </div>
-          </div>
-          <div class="product-card" data-category="lainnya">
-            <div class="product-img">
-              <img
-                src="images/produk/gantungan-kunci1.webp"
-                alt="Gantungan Kunci Souvenir"
-                loading="lazy"
-                decoding="async"
-                width="800"
-                height="600"
-              />
-            </div>
-            <div class="product-info">
-              <h3>Gantungan Kunci / Souvenir</h3>
-              <p>
-                Cocok untuk merchandise promosi, kenang-kenangan acara, atau branding usaha. Desain fleksibel dan hasil cetak kuat untuk penggunaan
-                jangka panjang.
-              </p>
-              <a href="#" class="btn-wa" data-product="Gantungan Kunci / Souvenir">Pesan via WA</a>
-            </div>
-          </div>
-          <div class="product-card" data-category="kartu">
-            <div class="product-img">
-              <img src="images/produk/nametag1.webp" alt="Nametag Custom" loading="lazy" decoding="async" width="800" height="600" />
-            </div>
-            <div class="product-info">
-              <h3>Nametag</h3>
-              <p>
-                Tingkatkan kesan profesional tim, panitia, dan karyawan dengan nametag yang jelas dibaca, rapi, dan nyaman dipakai untuk aktivitas
-                harian.
-              </p>
-              <a href="#" class="btn-wa" data-product="Nametag">Pesan via WA</a>
-            </div>
-          </div>
-          <div class="product-card" data-category="lainnya">
-            <div class="product-img">
-              <img src="images/produk/papanruangan3.webp" alt="Papan Ruangan" loading="lazy" decoding="async" width="800" height="600" />
-            </div>
-            <div class="product-info">
-              <h3>Papan Ruangan</h3>
-              <p>
-                Bantu navigasi kantor, sekolah, dan instansi jadi lebih tertata. Tampil elegan, informatif, dan mendukung citra profesional di setiap
-                ruangan.
-              </p>
-              <a href="#" class="btn-wa" data-product="Papan Ruangan">Pesan via WA</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="bg-light" id="testimonials">
         <div class="section-title">
           <span>KATA MEREKA</span>
@@ -978,6 +544,10 @@
         <img src="images/logosaya/logo.webp" alt="Logo Yh'rez Grafika" class="footer-logo" loading="lazy" decoding="async" width="525" height="564" />
         <h3>Yh'rez Grafika - Percetakan & Penjilitan</h3>
         <p class="footer-info">WA: 0813-4852-0154 | Jl. Sangga Buana II Selatan No.1, Palangka Raya, Kalteng 74874</p>
+        <p class="footer-info">
+          <a href="#home" style="color: inherit; text-decoration: none">Beranda</a> |
+          <a href="tentangkami.html" style="color: inherit; text-decoration: none">Tentang Kami</a>
+        </p>
         <p>&copy; 2026 Yh'rez Grafika. All Rights Reserved.</p>
       </div>
     </footer>

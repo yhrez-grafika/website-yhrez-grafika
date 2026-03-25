@@ -48,8 +48,19 @@
   function tampilkanBubbleDanSuara() {
     const waFloat = document.querySelector(".wa-float");
     if (!waFloat) return;
+
+    // Tambahkan efek suara
     waFloat.classList.add("show");
     putarSuara();
+
+    // Pastikan tombol melayang ini juga memicu konversi Google Ads saat diklik
+    waFloat.addEventListener("click", function (e) {
+      const url = this.getAttribute("href");
+      if (typeof gtag_report_conversion === "function") {
+        // Jangan cegah default di sini agar script.js tetap bisa menangani pembukaan link
+        gtag_report_conversion(url);
+      }
+    });
   }
 
   function jalankanNotifikasiAwal() {
