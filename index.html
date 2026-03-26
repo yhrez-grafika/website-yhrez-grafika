@@ -66,6 +66,99 @@
     <link rel="apple-touch-icon" href="logosaya/favicon.png" />
     <link rel="stylesheet" href="css/style.min.css" />
     <noscript><link rel="stylesheet" href="css/style.min.css" /></noscript>
+      <!-- katalog-layanan-dropdown-style -->
+    <style>
+      .nav-dropdown {
+        position: relative;
+      }
+
+      .nav-dropdown details {
+        position: relative;
+      }
+
+      .nav-dropdown summary {
+        list-style: none;
+        cursor: pointer;
+        color: #444;
+        margin-left: 25px;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .nav-dropdown summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .nav-dropdown details[open] summary {
+        color: var(--red);
+      }
+
+      .nav-dropdown-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        width: min(1100px, 94vw);
+        background: #ffffff;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+        padding: 16px;
+        z-index: 1200;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 14px;
+      }
+
+      .nav-dropdown-group p {
+        margin: 0 0 8px;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        color: #0055ff;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .nav-dropdown-group a {
+        margin: 0 0 6px;
+        display: block;
+        color: #111827;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: none;
+      }
+
+      .nav-dropdown-group a:hover {
+        color: var(--red);
+      }
+
+      @media (max-width: 1024px) {
+        .nav-dropdown-menu {
+          right: -180px;
+          width: min(720px, 92vw);
+          grid-template-columns: repeat(2, minmax(180px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-dropdown summary {
+          margin: 15px 0;
+        }
+
+        .nav-dropdown-menu {
+          position: static;
+          width: 100%;
+          margin-top: 8px;
+          box-shadow: none;
+          border: 1px solid #e2e8f0;
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav id="main-nav">
@@ -99,10 +192,49 @@
           <i class="fas fa-bars"></i>
         </div>
 
-        <ul class="nav-links" id="primary-navigation">
+                <ul class="nav-links" id="primary-navigation">
           <li><a href="#home">Beranda</a></li>
           <li><a href="tentangkami.html">Tentang Kami</a></li>
-          <li><a href="katalog.html">Produk</a></li>
+          <li><a href="katalog.html">Layanan</a></li>
+          <li class="nav-dropdown">
+            <details>
+              <summary>Katalog Layanan <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+              <div class="nav-dropdown-menu">
+                <div class="nav-dropdown-group">
+                  <p>Kategori Penjilidan</p>
+                  <a href="/produk/jilid-hardcover/index.html">Jilid Hardcover</a>
+                  <a href="/produk/jilid-softcover/index.html">Jilid Softcover</a>
+                  <a href="/produk/jilid-spiral-kawat/index.html">Jilid Spiral Kawat</a>
+                </div>
+                <div class="nav-dropdown-group">
+                  <p>Kategori Percetakan</p>
+                  <a href="/produk/nota-ncr-kwitansi/index.html">Nota / NCR / Kwitansi</a>
+                  <a href="/produk/brosur-flyer/index.html">Brosur / Flyer</a>
+                  <a href="/produk/leaflet-brosur-lipat/index.html">Leaflet / Brosur Lipat</a>
+                  <a href="/produk/kartu-nama/index.html">Kartu Nama</a>
+                  <a href="/produk/kalender-meja/index.html">Kalender Meja</a>
+                  <a href="/produk/booklet-modul/index.html">Booklet / Modul</a>
+                  <a href="/produk/daftar-menu/index.html">Daftar Menu</a>
+                  <a href="/produk/banner-x-banner/index.html">Banner / X-Banner</a>
+                  <a href="/produk/sertifikat/index.html">Sertifikat</a>
+                  <a href="/produk/undangan/index.html">Undangan</a>
+                </div>
+                <div class="nav-dropdown-group">
+                  <p>Kategori Suvenir / Custom</p>
+                  <a href="/produk/stempel-flash/index.html">Stempel Flash</a>
+                  <a href="/produk/plakat-akrilik/index.html">Plakat Akrilik</a>
+                  <a href="/produk/medali-akrilik/index.html">Medali Akrilik</a>
+                  <a href="/produk/gantungan-kunci-gaci/index.html">Gantungan Kunci (Gaci)</a>
+                  <a href="/produk/sticker-label-cutting/index.html">Sticker Label &amp; Cutting</a>
+                </div>
+                <div class="nav-dropdown-group">
+                  <p>Kategori Identitas</p>
+                  <a href="/produk/nametag/index.html">Nametag</a>
+                  <a href="/produk/papan-nama-meja/index.html">Papan Nama Meja</a>
+                </div>
+              </div>
+            </details>
+          </li>
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="#testimonials">Testimoni</a></li>
           <li><a href="#contact">Kontak</a></li>
@@ -140,7 +272,7 @@
               rapi, dan bisa pesan via WhatsApp tanpa antre..!
             </p>
             <div class="hero-btns">
-              <a href="katalog.html" class="btn-primary">Lihat Produk</a>
+              <a href="katalog.html" class="btn-primary">Produk Unggulan</a>
               <a
                 href="https://api.whatsapp.com/send?phone=6281348520154&text=Halo%20Admin%20Yh%27rez%20Grafika,%20saya%20ingin%20konsultasi%20gratis%20untuk%20cetak..."
                 class="btn-primary"
@@ -180,222 +312,18 @@
           </div>
         </div>
       </div>
-
       <section class="promo-section">
         <div class="section-title">
           <span>PENAWARAN SPESIAL</span>
-          <h2>Promo & Info Terbaru</h2>
+          <h2>Promo &amp; Info Terbaru</h2>
           <div class="line"></div>
-        </div>
-        <div class="promo-grid">
-          <div class="promo-card">
-            <span class="promo-badge">PROMO</span>
-            <div class="promo-image">
-              <img
-                src="images/promo/softcover.webp"
-                alt="Layanan Jilid Softcover/Jilid Sambung"
-                loading="lazy"
-                decoding="async"
-                width="810"
-                height="1200"
-              />
-            </div>
-            <div class="promo-content">
-              <h3>Jilid Softcover/Jilid Sambung</h3>
-              <p>
-                Hasil jilid <strong>rapi</strong>, <strong>kuat</strong>, dan <strong>presisi</strong>. Cocok untuk skripsi, laporan magang, atau
-                tugas akhir. <br />Proses cepat, <strong>harga bersahabat</strong> khusus mahasiswa!
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-          <div class="promo-card">
-            <span class="promo-badge">PROMO</span>
-            <div class="promo-image">
-              <img src="images/promo/logo3.webp" alt="Nota NCR / Surat Jalan" loading="lazy" decoding="async" width="884" height="1200" />
-            </div>
-            <div class="promo-content">
-              <h3>Nota NCR / Surat Jalan</h3>
-              <p>
-                Cetak nota rangkap (2/3 ply) tanpa perlu karbon lagi. <br />Gratis desain logo sederhana & penomoran. Ideal untuk invoice toko, surat
-                jalan, atau tanda terima bisnis Anda.
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-          <div class="promo-card">
-            <span class="promo-badge">PROMO</span>
-            <div class="promo-image">
-              <img
-                src="images/promo/kalender-meja.webp"
-                alt="Layanan Kalender Meja Custom 2026"
-                loading="lazy"
-                decoding="async"
-                width="538"
-                height="600"
-              />
-            </div>
-            <div class="promo-content">
-              <h3>Kalender meja Custom 2026</h3>
-              <p>
-                Abadikan momen atau branding usaha Anda di meja kerja. <br />Bisa pakai foto sendiri atau logo instansi. <br />Kualitas cetak tajam,
-                dudukan kokoh, tersedia berbagai pilihan bahan.
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-          <div class="promo-card">
-            <span class="promo-badge">PROMO</span>
-            <div class="promo-image">
-              <img src="images/promo/jilidskripsi.webp" alt="Promo Jilid Skripsi" loading="lazy" decoding="async" width="1353" height="1500" />
-            </div>
-            <div class="promo-content">
-              <h3>Jilid Skripsi Mahasiswa</h3>
-              <p>
-                Standar kampus, hasil <strong>rapi</strong>, dan <strong>pengerjaan kilat</strong>. Tersedia berbagai pilihan warna cover emas/perak
-                yang tahan lama. Harga <strong>paling bersahabat</strong> di kantong mahasiswa!
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-          <div class="promo-card">
-            <span class="promo-badge">PROMO</span>
-            <div class="promo-image">
-              <img src="images/promo/booklet.webp" alt="Layanan Cetak Buku Booklet" loading="lazy" decoding="async" width="974" height="1297" />
-            </div>
-            <div class="promo-content">
-              <h3>Cetak Buku Booklet</h3>
-              <p>
-                Cetak katalog, majalah mini, atau buku panduan dengan kualitas warna tajam. <br />Jilid staples tengah rapi dan awet. Cocok untuk
-                profil usaha atau laporan kegiatan dengan budget efisien!
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-          <div class="promo-card">
-            <span class="promo-badge">PROMO</span>
-            <div class="promo-image">
-              <img src="images/promo/jilid-spiral2.webp" alt="Layanan Jilid Spiral Kawat" loading="lazy" decoding="async" width="900" height="1200" />
-            </div>
-            <div class="promo-content">
-              <h3>Jilid Spiral kawat</h3>
-              <p>
-                Buku bisa dibuka 360 derajat dengan mudah tanpa merusak kertas. <br />Menggunakan kawat berkualitas yang kokoh dan tidak mudah
-                bengkok. <br />Ideal untuk modul kuliah, portofolio, atau agenda kerja!
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-          <div class="promo-card">
-            <span class="promo-badge">INFO BARU</span>
-            <div class="promo-image">
-              <img src="images/produk/daftar-menu.webp" alt="Cetak Daftar Menu" loading="lazy" decoding="async" width="800" height="600" />
-            </div>
-            <div class="promo-content">
-              <h3>Daftar Menu</h3>
-              <p>
-                Tampilkan produk makanan dan minuman Anda lebih menarik dengan desain menu yang rapi, jelas, dan mudah dibaca. Cocok untuk cafe,
-                warung, dan UMKM agar pelanggan lebih cepat memilih dan nilai transaksi meningkat.
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-          <div class="promo-card">
-            <span class="promo-badge">INFO BARU</span>
-            <div class="promo-image">
-              <img src="images/produk/Kartu-Nama.webp" alt="Cetak Kartu Nama Profesional" loading="lazy" decoding="async" width="800" height="600" />
-            </div>
-            <div class="promo-content">
-              <h3>Kartu Nama</h3>
-              <p>
-                Bangun kesan profesional sejak pertemuan pertama dengan kartu nama custom yang elegan dan berkualitas cetak tajam. Solusi efektif
-                untuk personal branding, networking, dan memperkuat kepercayaan calon pelanggan.
-              </p>
-              <a
-                href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover..."
-                onclick="
-                  return gtag_report_conversion(
-                    'https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20mau%20tanya%20soal%20Jilid%20Softcover...',
-                  );
-                "
-                class="btn-promo"
-              >
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
+          <p style="max-width: 760px; margin: 0 auto 20px; color: #555">
+            Halaman promo sekarang dipisah agar tampil lebih fokus dan ringan. Klik tombol di bawah untuk melihat semua promo terbaru dari Yh'rez Grafika.
+          </p>
+          <a href="promo/index.html" class="btn-promo" style="display: inline-block; padding: 12px 24px">Lihat Promo Menarik Lainnya di Sini</a>
         </div>
       </section>
+
       <section class="bg-light" id="testimonials">
         <div class="section-title">
           <span>KATA MEREKA</span>
@@ -524,7 +452,7 @@
           <div class="map-location-container">
             <div class="map-box">
               <iframe
-                src="https://maps.google.com/maps?q=Yh'rez%20Grafika,%20Jl.%20Sangga%20Buana%20II%20Selatan%20No.1&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Yh%27rez%20Grafika,%20Jl.%20Sangga%20Buana%20II%20Selatan%20No.1&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 title="Lokasi Toko Percetakan Yh'rez Grafika"
                 width="100%"
                 height="250"
@@ -615,3 +543,10 @@
     <script src="js/wa-notif.js" defer></script>
   </body>
 </html>
+
+
+
+
+
+
+
