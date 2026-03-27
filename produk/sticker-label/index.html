@@ -105,13 +105,62 @@
         background-color: #128c7e;
         transform: translateY(-2px);
       }
+      .related-services {
+        margin-top: 28px;
+        padding: 18px;
+        border: 1px solid #e3e8f0;
+        border-radius: 12px;
+        background: #fbfdff;
+      }
+      .related-services h2 {
+        margin: 0 0 12px;
+        font-size: 20px;
+        color: #222;
+      }
+      .service-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+      }
+      .service-links a {
+        display: block;
+        padding: 9px 12px;
+        border-radius: 8px;
+        border: 1px solid #d7deea;
+        background: #f5f8fc;
+        color: #22324a;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .service-links a:hover {
+        background: #eef3fa;
+        border-color: #c8d3e3;
+      }
+      .service-links a.is-active {
+        background: #fee9e9;
+        border-color: #f6b7bf;
+        color: #a9152a;
+        font-weight: 700;
+      }
+      @media (max-width: 680px) {
+        .service-links {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 460px) {
+        .service-links {
+          grid-template-columns: 1fr;
+        }
+      }
       footer {
         text-align: center;
         margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #eee;
+        padding: 16px 14px;
         font-size: 12px;
-        color: #999;
+        color: #f1f1f1;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #7a0016 0%, #2b1055 100%);
+        border: 1px solid rgba(255, 255, 255, 0.14);
       }
     </style>
   </head>
@@ -152,6 +201,32 @@
           </a>
         </div>
       </div>
+
+      <section class="related-services" aria-label="Layanan Kami Lainnya">
+        <h2>Layanan Kami Lainnya</h2>
+        <div class="service-links">
+          <a href="../sticker-label/" class="is-active" aria-current="page">Sticker Label Kemasan</a>
+          <a href="../sticker-label-cutting/">Sticker Cutting Custom</a>
+          <a href="../stempel-flash/">Stempel Flash</a>
+          <a href="../plakat-akrilik/">Plakat Akrilik</a>
+          <a href="../papan-nama-meja/">Papan Nama Meja</a>
+          <a href="../nota-ncr-kwitansi/">Nota / NCR / Kwitansi</a>
+          <a href="../medali-akrilik/">Medali Akrilik</a>
+          <a href="../leaflet-brosur-lipat/">Leaflet / Brosur Lipat</a>
+          <a href="../kartu-nama/">Kartu Nama</a>
+          <a href="../kalender-meja/">Kalender Meja</a>
+          <a href="../jilid-spiral-kawat/">Jilid Spiral Kawat</a>
+          <a href="../jilid-softcover/">Jilid Softcover</a>
+          <a href="../jilid-hardcover/">Jilid Hardcover</a>
+          <a href="../gantungan-kunci-gaci/">Gantungan Kunci (Gaci)</a>
+          <a href="../daftar-menu/">Daftar Menu</a>
+          <a href="../booklet-modul/">Booklet / Modul</a>
+          <a href="../brosur-flyer/">Brosur / Flyer</a>
+          <a href="../banner-x-banner/">Banner / X-Banner</a>
+          <a href="../sertifikat/">Sertifikat</a>
+          <a href="../undangan/">Undangan</a>
+        </div>
+      </section>
 
       <footer>&copy; 2026 Yh'rez Grafika. Semua Hak Dilindungi.</footer>
     </div>

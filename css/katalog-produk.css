@@ -180,8 +180,12 @@ h1 {
 footer {
   text-align: center;
   font-size: 13px;
-  color: #6b7280;
+  color: #f1f1f1;
   margin-top: 24px;
+  padding: 16px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7a0016 0%, #2b1055 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 @media (max-width: 920px) {
