@@ -23,6 +23,29 @@
   src: url("../webfonts/roboto-v51-latin-900.woff2") format("woff2");
   font-display: swap;
 }
+
+/* Footer spacing compaction */
+footer {
+  padding: 32px 20px 24px !important;
+}
+
+.footer-logo {
+  margin-bottom: 10px !important;
+}
+
+.footer-content h3 {
+  margin: 0 0 8px !important;
+  line-height: 1.25;
+}
+
+.footer-content .footer-info {
+  margin: 7px 0 !important;
+  line-height: 1.45;
+}
+
+.footer-content p:last-child {
+  margin-top: 10px !important;
+}
 /* block 1 */
 html,
       body {
