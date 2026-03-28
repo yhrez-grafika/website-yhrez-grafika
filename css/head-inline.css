@@ -46,6 +46,21 @@ footer {
 .footer-content p:last-child {
   margin-top: 10px !important;
 }
+
+/* About page header cleanup */
+.about-section .section-title > span {
+  display: none !important;
+}
+
+.about-section .section-title > p {
+  color: #7a0016 !important;
+  font-weight: 700 !important;
+}
+
+.about-section .section-title > p a {
+  color: inherit !important;
+  font-weight: inherit !important;
+}
 /* block 1 */
 html,
       body {
