@@ -331,7 +331,7 @@ html,
       }
       #home.hero .hours-box h3 {
         margin: 0 0 8px;
-        color: #103a8a;
+        color: #ff1a1a;
         font-size: 1.14rem;
         font-weight: 800;
         display: inline-flex;
@@ -341,7 +341,7 @@ html,
       }
       #home.hero .hours-box h3 .hours-title-icon {
         font-size: 0.95em;
-        color: #103a8a;
+        color: #ff1a1a;
       }
       #home.hero .hours-box p {
         margin: 0 0 3px;
@@ -349,12 +349,57 @@ html,
         line-height: 1.25;
         font-weight: 700;
       }
+      #home.hero .hours-box .hours-lines {
+        width: fit-content;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+      }
+      #home.hero .hours-box .hours-line {
+        color: #ffffff;
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto clamp(96px, 31vw, 118px) auto auto;
+        align-items: baseline;
+        column-gap: 4px;
+        text-align: left;
+      }
+      #home.hero .hours-box .hours-line::before {
+        content: "-";
+        display: block;
+      }
+      #home.hero .hours-box .hours-line .hours-label,
+      #home.hero .hours-box .hours-line .hours-sep,
+      #home.hero .hours-box .hours-line .hours-value {
+        display: block;
+      }
+      #home.hero .hours-box .hours-line .hours-sep {
+        text-align: center;
+        width: 1ch;
+      }
+      #home.hero .hours-box .hours-line .hours-value {
+        white-space: nowrap;
+        padding-left: 1px;
+      }
       #home.hero #tanggal-hari {
         margin-top: 6px;
         min-height: 1.25em;
-        color: #ffd54a;
+        color: #39ff14;
         font-size: 0.98rem;
         font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+      }
+      #home.hero #tanggal-hari::before {
+        content: "\f073";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 0.9em;
+        color: #39ff14;
       }
       #main-nav {
         padding: 12px 0 !important;
@@ -476,6 +521,23 @@ html,
         color: #25d366;
         font-size: 1.05rem;
         line-height: 1;
+      }
+
+      .running-wrapper {
+        background: #7a0016 !important;
+      }
+      .running-track {
+        animation: scroll-left 24s linear infinite;
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+      }
+      .running-text {
+        color: #ffffff;
+        text-shadow: none;
+        text-rendering: geometricPrecision;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
 
