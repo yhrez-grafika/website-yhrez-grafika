@@ -1,75 +1,79 @@
-/* 1. Container Luar (KUNCI SCROLL) */
+/* --- CSS UNTUK SLIDER FOTO PROFIL ATAS --- */
+.about-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.about-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.about-slide.active {
+  opacity: 1;
+  z-index: 2;
+  position: relative;
+}
+
+/* 1. Container Luar (KUNCI AGAR BISA MELUAP KELUAR) */
 .history-scroll-wrapper {
-  overflow-x: auto; /* Mengaktifkan scroll horizontal */
+  overflow-x: auto !important;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; /* Membuat scroll di HP terasa halus */
-  width: 100%;
-  padding: 10px 0 20px 0;
+  -webkit-overflow-scrolling: touch;
+  width: 100vw !important; /* Paksa selebar layar penuh */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw; /* Trik agar keluar dari padding website */
+  margin-right: -50vw;
+  padding: 20px 0 40px 0;
   display: block;
+  cursor: grab;
+  user-select: none;
 }
 
-/* Container Utama */
-.history-scroll-wrapper {
-  overflow: hidden; /* Sembunyikan bagian yang meluap */
-  width: 100%;
-  padding: 20px 0;
-  background: #fff;
+.history-scroll-wrapper:active {
+  cursor: grabbing;
 }
 
-/* Animasi Berjalan Otomatis */
+/* 2. Container Dalam (Barisan Foto) */
 .history-grid {
-  display: flex;
-  gap: 15px;
-  width: max-content;
-  animation: slide-otomatis 20s linear infinite; /* Kecepatan 20 detik */
-}
-
-/* Berhenti saat disentuh/diarahkan mouse */
-.history-grid:hover {
-  animation-play-state: paused;
-}
-
-@keyframes slide-otomatis {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Angka ini harus disesuaikan dengan jumlah foto */
-    transform: translateX(-50%);
-  }
-}
-
-.history-item {
-  width: 180px; /* Ukuran foto */
-  flex-shrink: 0;
-  text-align: center;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; /* Paksa tetap satu baris */
+  gap: 25px;
+  width: max-content !important; /* Biar baris memanjang terus ke kanan */
+  padding: 0 50px; /* Jarak aman agar foto pertama tidak terlalu mepet kiri */
 }
 
 /* 3. Item Foto */
 .history-item {
-  width: 160px; /* Ukuran ini pas agar di HP terlihat 2 foto dan sedikit sisa foto ke-3 */
-  flex-shrink: 0; /* KUNCI: Mencegah foto gepeng/menciut */
-  text-align: center;
-}
-
-/* Tambahkan ini di bagian .history-grid (baris 11-17) */
-.history-grid {
+  width: 250px; /* Samakan dengan ukuran yang kita buat sebelumnya */
+  flex-shrink: 0;
   display: flex;
-  flex-wrap: nowrap;
-  gap: 12px;
-  /* KUNCI: Ubah max-content menjadi 100% agar foto tidak meluap keluar layar jika hanya ada 2 */
-  width: max-content;
-  justify-content: center; /* Foto akan berada di tengah layar */
-  padding: 0 10px;
+  flex-direction: column;
+  align-items: center; /* KUNCI: Memaksa semua isi di dalamnya ke tengah */
+  text-align: center;
 }
 
 .history-photo-wrapper {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 4px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 .history-photo-wrapper img {
@@ -80,107 +84,140 @@
 
 .year-label {
   display: block;
-  margin-top: 5px;
-  font-size: 0.8rem;
   font-weight: bold;
   color: #800000;
-  /* Tambahkan ini agar teks tahun tidak ikut nowrap */
-  white-space: normal;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
 }
 
+.history-item-desc {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+  margin-top: 8px;
+  padding: 0 10px;
+  white-space: normal;
+  text-align: center;
+  /* KUNCI AGAR CENTER: */
+  width: 100%;
+  max-width: 230px; /* Harus lebih kecil sedikit dari lebar history-item */
+}
+
+/* 4. Judul Section (Maron & Bold) */
 .history-title {
   color: #800000 !important;
   text-align: center !important;
-  font-weight: bold !important; /* Pakai kata 'bold' agar lebih kompatibel */
-  font-size: 1.2rem !important; /* Saya besarkan sedikit ukurannya agar lebih tegas */
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
   margin-bottom: 25px !important;
   display: block !important;
-  width: 100% !important;
-  font-family: sans-serif; /* Tambahkan ini sebagai cadangan jika font utama tidak bisa bold */
+  width: 100%;
 }
 
-/* 4. Teks Deskripsi (YANG INI KUNCI KE TENGAH) */
+/* 5. Deskripsi Umum (Bawah Slider) */
 .history-description {
   display: block;
   text-align: center;
-  margin: 25px auto; /* Margin otomatis kiri-kanan agar ke tengah */
+  margin: 30px auto;
   padding: 0 20px;
   color: #333;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
-  /* Membatalkan efek nowrap dari slider agar teks bisa pecah baris */
   white-space: normal;
-  width: 100%;
-  max-width: 600px; /* Agar teks tidak terlalu lebar di layar besar */
+  max-width: 600px;
 }
 
-/* 5. Custom Scrollbar */
-.history-scroll-wrapper::-webkit-scrollbar {
-  height: 4px;
+.line {
+  width: 60px; /* Panjang garis */
+  height: 5px; /* Ketebalan garis (Ubah angka ini untuk lebih tebal) */
+  background-color: #a8a2a2; /* Warna Merah Maron */
+  margin: 20px auto; /* Memberi jarak atas-bawah dan posisi di tengah */
+  border-radius: 2px; /* Membuat ujung garis sedikit melengkung (rapi) */
+  display: block;
 }
-.history-scroll-wrapper::-webkit-scrollbar-thumb {
-  background: #ccc;
+
+/* 6. Custom Scrollbar dengan Tombol Panah */
+
+/* Jalur Scrollbar (Track) */
+.history-scroll-wrapper::-webkit-scrollbar-track {
+  background: #e0e0e0;
   border-radius: 10px;
 }
 
-/* 4. Judul (Maron, Bold, Center) */
-.history-title {
-  color: #800000 !important; /* Warna Merah Maron */
-  text-align: center !important; /* Paksa ke Tengah */
-  font-weight: bold !important; /* Tebal */
-  font-size: 1.3rem;
+/* Batang Penggeser (Thumb) */
+.history-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #888888; /* Warna abu-abu gelap seperti gambar */
+  border: 2px solid #e0e0e0; /* Memberi jarak halus dengan track */
+  border-radius: 10px;
+}
+
+/* Tombol Panah (Buttons) */
+.history-scroll-wrapper::-webkit-scrollbar-button:single-button {
+  background-color: #bbbbbb;
+  display: block;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+}
+
+/* Tombol Panah Kiri */
+.history-scroll-wrapper::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23555'><polygon points='70,20 70,80 30,50'/></svg>");
+  background-position: center;
+}
+
+/* Tombol Panah Kanan */
+.history-scroll-wrapper::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23555'><polygon points='30,20 30,80 70,50'/></svg>");
+  background-position: center;
+}
+
+/* Styling Kontainer Titik */
+.history-dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
   margin-bottom: 20px;
-  display: block;
-  width: 100%;
 }
 
-/* 5. Teks Deskripsi (Center) */
-.history-description {
-  display: block;
-  text-align: center;
-  margin: 25px auto; /* Auto kiri-kanan agar ke tengah */
-  padding: 0 20px;
-  color: #333;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  width: 100%;
-  max-width: 600px;
-  white-space: normal; /* Agar teks bisa turun ke bawah jika panjang */
+/* Styling Titik Dasar */
+.history-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
-.history-item-desc {
-  font-size: 0.7rem; /* Ukuran teks kecil agar tidak penuh */
-  color: #666; /* Warna abu-abu agar elegan */
-  line-height: 1.3;
-  margin-top: 5px;
-  padding: 0 5px;
-  white-space: normal; /* KUNCI: Agar teks otomatis turun ke bawah */
-  text-align: center;
+/* Styling Titik Aktif (Maron) */
+.history-dot.active {
+  background-color: #800000;
+  transform: scale(1.2);
 }
 
-/* --- Perbaikan Jarak Alasan Memilih --- */
+/* Efek Hover (Hanya di Laptop) */
+@media (hover: hover) {
+  .history-dot:hover:not(.active) {
+    background-color: #a5a5a5;
+  }
+}
 
+/* 7. Perbaikan Jarak Section Alasan Memilih */
 #keunggulan-kami {
-  margin-top: -50px !important; /* Menarik ke atas untuk hapus area kosong */
+  margin-top: -20px !important;
   position: relative;
   z-index: 5;
-  background: #fff; /* Pastikan background putih agar menimpa area scroll */
-  padding-top: 30px;
+  background: #fff;
+  padding-top: 40px;
 }
 
-/* Pastikan judul alasan memilih tetap rapi */
 .section-title.advantages-title h2 {
-  color: #800000 !important; /* Biar seragam warna maron */
+  color: #800000 !important;
   font-weight: bold !important;
   text-align: center;
-}
-
-/* Membatasi lebar teks deskripsi tahun agar tidak bikin area kosong melebar */
-.history-item-desc {
-  white-space: normal;
-  max-width: 150px;
-  margin: 8px auto 0;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  color: #666;
 }
