@@ -45,6 +45,17 @@ body {
   background: linear-gradient(180deg, #5f0015 0%, var(--brand-blue-dark) 100%) !important;
 }
 
+.clients-section {
+  background:
+    radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 34%, rgba(255, 255, 255, 0) 62%),
+    linear-gradient(180deg, #5f0015 0%, #721d3d 42%, #5b1b55 72%, #3f2b77 100%) !important;
+}
+
+.clients-logos {
+  background: transparent !important;
+  border-top: none !important;
+}
+
 .contact-container-new,
 .contact-item,
 .social-wrapper,

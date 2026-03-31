@@ -30,6 +30,8 @@
   overflow-x: auto !important;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE/Edge lama */
+  scrollbar-width: none; /* Firefox */
   width: 100vw !important; /* Paksa selebar layar penuh */
   position: relative;
   left: 50%;
@@ -40,6 +42,10 @@
   display: block;
   cursor: grab;
   user-select: none;
+}
+
+.history-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
 }
 
 .history-scroll-wrapper:active {
@@ -135,42 +141,6 @@
   margin: 20px auto; /* Memberi jarak atas-bawah dan posisi di tengah */
   border-radius: 2px; /* Membuat ujung garis sedikit melengkung (rapi) */
   display: block;
-}
-
-/* 6. Custom Scrollbar dengan Tombol Panah */
-
-/* Jalur Scrollbar (Track) */
-.history-scroll-wrapper::-webkit-scrollbar-track {
-  background: #e0e0e0;
-  border-radius: 10px;
-}
-
-/* Batang Penggeser (Thumb) */
-.history-scroll-wrapper::-webkit-scrollbar-thumb {
-  background: #888888; /* Warna abu-abu gelap seperti gambar */
-  border: 2px solid #e0e0e0; /* Memberi jarak halus dengan track */
-  border-radius: 10px;
-}
-
-/* Tombol Panah (Buttons) */
-.history-scroll-wrapper::-webkit-scrollbar-button:single-button {
-  background-color: #bbbbbb;
-  display: block;
-  background-size: 10px;
-  background-repeat: no-repeat;
-  border-radius: 2px;
-}
-
-/* Tombol Panah Kiri */
-.history-scroll-wrapper::-webkit-scrollbar-button:single-button:horizontal:decrement {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23555'><polygon points='70,20 70,80 30,50'/></svg>");
-  background-position: center;
-}
-
-/* Tombol Panah Kanan */
-.history-scroll-wrapper::-webkit-scrollbar-button:single-button:horizontal:increment {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23555'><polygon points='30,20 30,80 70,50'/></svg>");
-  background-position: center;
 }
 
 /* Styling Kontainer Titik */
