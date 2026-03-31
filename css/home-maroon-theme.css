@@ -1,0 +1,111 @@
+/* Theme khusus halaman utama: maron solid + gradien biru brand */
+:root {
+  --maroon-900: #4a0010;
+  --maroon-800: #650016;
+  --maroon-700: #7a001b;
+  --brand-blue: #1a4299;
+  --brand-blue-dark: #12306f;
+}
+
+#main-nav,
+#main-nav.navbar-scrolled {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body {
+  background: radial-gradient(circle at 88% 8%, #2a57bd 0%, var(--brand-blue) 24%, #7a001b 58%), linear-gradient(150deg, #4a0010 0%, #650016 55%, #7a001b 100%);
+}
+
+#main-content {
+  background: linear-gradient(160deg, #560014 0%, #700019 62%, var(--brand-blue-dark) 100%);
+}
+
+.promo-section {
+  background: linear-gradient(180deg, #5f0015 0%, var(--brand-blue-dark) 100%) !important;
+  border-top: 1px solid #8f2b46;
+  border-bottom: 1px solid #8f2b46;
+}
+
+#testimonials.bg-light {
+  background: linear-gradient(180deg, #5f0015 0%, var(--brand-blue-dark) 100%) !important;
+}
+
+.testimonial-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(122, 0, 27, 0.24);
+  box-shadow: 0 10px 26px rgba(74, 0, 16, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+.clients-section,
+.contact-section-new {
+  background: linear-gradient(180deg, #5f0015 0%, var(--brand-blue-dark) 100%) !important;
+}
+
+.contact-container-new,
+.contact-item,
+.social-wrapper,
+.map-box {
+  background: hsl(0, 0%, 100%) !important;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.section-title h2,
+.clients-title,
+.title-left h2 {
+  color: var(--maroon-900) !important;
+}
+
+.section-title p,
+.clients-desc,
+.testimonial-card p,
+.contact-item p {
+  color: #3a2730 !important;
+}
+
+.line {
+  background-color: var(--maroon-700) !important;
+}
+
+.promo-section .section-title h2,
+#testimonials .section-title h2,
+#testimonials .section-title span,
+.clients-title,
+.clients-desc {
+  color: #fff5fa !important;
+}
+
+.promo-section .section-title p {
+  color: #ffe5ee !important;
+}
+
+.promo-section .line,
+#testimonials .line {
+  background-color: #ffd7e1 !important;
+}
+
+.promo-cta-blue {
+  background: linear-gradient(135deg, var(--maroon-700) 0%, var(--maroon-800) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.promo-cta-blue:hover {
+  background: linear-gradient(135deg, var(--maroon-800) 0%, var(--maroon-900) 100%) !important;
+}
+
+@media (max-width: 768px) {
+  .testimonial-card,
+  .contact-container-new,
+  .contact-item,
+  .social-wrapper,
+  .map-box {
+    background: #ffffff !important;
+  }
+
+  .testimonial-card {
+    background: #ffffff !important;
+  }
+}

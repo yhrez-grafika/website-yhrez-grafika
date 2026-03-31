@@ -221,3 +221,21 @@
   font-weight: bold !important;
   text-align: center;
 }
+
+.page-breadcrumb {
+  margin-bottom: 8px;
+  color: #7a0016;
+  font-weight: 600;
+}
+
+.page-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.page-breadcrumb a:hover,
+.page-breadcrumb a:focus-visible {
+  text-decoration: underline;
+}
