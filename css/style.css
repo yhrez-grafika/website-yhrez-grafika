@@ -121,11 +121,11 @@ body {
 }
 .brand-domain {
   font-size: 0.75rem;
-  color: #7a1022;
+  color: #1d2f8f;
 }
 
 .brand-domain i {
-  color: #7a1022;
+  color: #1d2f8f;
 }
 .nav-links {
   display: flex;
@@ -704,19 +704,19 @@ section {
 }
 
 footer {
-  /* Perpaduan Gradien Diagonal Marun-Biru Tua/Ungu Gelap yang sangat halus */
-  background: linear-gradient(135deg, #7a0016 0%, #2b1055 100%);
-  color: #f1f1f1;
+  background: #ffffff;
+  color: #334155;
   padding: 50px 20px;
   text-align: center;
   font-size: 0.9rem;
   letter-spacing: 1px;
+  border-top: 1px solid #e2e8f0;
 }
 
 footer h3,
 footer p,
 .footer-info {
-  color: #f1f1f1 !important;
+  color: #334155 !important;
 }
 
 footer h3 span {
@@ -840,7 +840,7 @@ footer h3 span {
 .item-text h4,
 .social-wrapper h4 {
   font-size: 0.85rem;
-  color: #720505;
+  color: #6272a4;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 8px;
@@ -887,7 +887,8 @@ footer h3 span {
     opacity 0.3s ease;
 }
 
-.social-link.instagram {
+.social-link.instagram,
+.social-link.instagram-link {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
 }
 
@@ -899,6 +900,61 @@ footer h3 span {
   transform: translateY(-3px);
   opacity: 0.9;
 }
+
+.contact-social-actions,
+.store-direction-wrapper {
+  width: 100%;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-social-grid {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  justify-content: center !important;
+}
+
+.contact-social-grid .social-link {
+  width: 100% !important;
+  min-height: 48px;
+  padding: 12px 10px !important;
+}
+
+.store-direction-wrapper {
+  margin-top: 14px;
+}
+
+.store-direction-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5f7ce8, #4d6cd4);
+  box-shadow: 0 6px 14px rgba(77, 108, 212, 0.25);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.store-direction-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.store-direction-btn i {
+  font-size: 0.95rem;
+}
+
 
 /* --- GAYA PETA & AREA LAYANAN BARU --- */
 .map-location-container {
@@ -1155,7 +1211,10 @@ footer h3 span {
   .hero h1 {
     font-size: 2.2rem;
   }
-
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 768px) {
   /* INI DIA PENYAKITNYA! Sudah diganti ke 'clip' agar sticky menyala kembali di HP */
@@ -1232,6 +1291,18 @@ footer h3 span {
   }
   .social-icons {
     justify-content: flex-start !important;
+  }
+  .contact-social-actions {
+    text-align: center !important;
+  }
+  .contact-social-grid {
+    justify-content: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .store-direction-wrapper {
+    max-width: 360px;
+    margin: 14px auto 0;
   }
 
   section {
@@ -1462,7 +1533,15 @@ footer h3 span {
   .section-title h2 {
     font-size: 1.35rem;
   }
+  .about-slider {
+    height: 320px;
+  }
 
+  .contact-social-actions,
+  .store-direction-wrapper {
+    max-width: 320px;
+  }
+}
 
 /* --- Safe Responsive Polish (no structure changes) --- */
 @media (max-width: 768px) {

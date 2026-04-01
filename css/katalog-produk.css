@@ -166,6 +166,7 @@ h1 {
   background: #f8fafc;
   width: 100%;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .price-list-title {
@@ -188,17 +189,23 @@ h1 {
 }
 
 .price-list-table-wrap {
+  display: block;
   max-width: 100%;
   width: 100%;
+  min-width: 0;
   overflow-x: auto !important;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-gutter: stable both-edges;
+  touch-action: pan-x;
 }
 
 .price-list-table {
-  width: 100%;
+  width: max(100%, 560px);
   border-collapse: collapse;
   min-width: 560px;
+  table-layout: auto;
 }
 
 .price-list-table th,
@@ -230,6 +237,7 @@ h1 {
 .price-list-box--tight .price-list-table,
 .price-list-box--stempel-tight .price-list-table,
 .price-list-box--compact .price-list-table {
+  width: max(100%, 430px);
   min-width: 430px;
 }
 
@@ -289,7 +297,8 @@ h1 {
   }
 
   .price-list-table-wrap {
-    margin-right: -2px;
+    margin-right: 0;
+    padding-bottom: 2px;
   }
 
   .price-list-table {
@@ -358,12 +367,12 @@ h1 {
 footer {
   text-align: center;
   font-size: 13px;
-  color: #f1f1f1;
+  color: #334155;
   margin-top: 24px;
   padding: 16px 14px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #7a0016 0%, #2b1055 100%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
 @media (max-width: 920px) {

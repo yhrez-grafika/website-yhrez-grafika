@@ -91,7 +91,7 @@
 .year-label {
   display: block;
   font-weight: bold;
-  color: #800000;
+  color: #1d2f8f;
   margin-top: 10px;
   text-align: center;
   width: 100%;
@@ -112,7 +112,7 @@
 
 /* 4. Judul Section (Maron & Bold) */
 .history-title {
-  color: #800000 !important;
+  color: #1d2f8f !important;
   text-align: center !important;
   font-weight: 800 !important;
   font-size: 1.5rem !important;
@@ -166,7 +166,7 @@
 
 /* Styling Titik Aktif (Maron) */
 .history-dot.active {
-  background-color: #800000;
+  background-color: #1d4ed8;
   transform: scale(1.2);
 }
 
@@ -187,14 +187,14 @@
 }
 
 .section-title.advantages-title h2 {
-  color: #800000 !important;
+  color: #1d2f8f !important;
   font-weight: bold !important;
   text-align: center;
 }
 
 .page-breadcrumb {
   margin-bottom: 8px;
-  color: #7a0016;
+  color: #1d2f8f;
   font-weight: 600;
 }
 

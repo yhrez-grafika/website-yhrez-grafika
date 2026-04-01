@@ -53,7 +53,7 @@ footer {
 }
 
 .about-section .section-title > p {
-  color: #7a0016 !important;
+  color: #1d2f8f !important;
   font-weight: 700 !important;
 }
 
@@ -524,7 +524,7 @@ html,
       }
 
       .running-wrapper {
-        background: #7a0016 !important;
+        background: #1d2f8f !important;
       }
       .running-track {
         animation: scroll-left 24s linear infinite;
