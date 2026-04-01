@@ -18,10 +18,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Arial, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at 10% 10%, #e9efff 0, transparent 35%),
-    radial-gradient(circle at 90% 15%, #fef3f2 0, transparent 32%),
-    var(--bg);
+  background: radial-gradient(circle at 10% 10%, #e9efff 0, transparent 35%), radial-gradient(circle at 90% 15%, #fef3f2 0, transparent 32%), var(--bg);
   line-height: 1.6;
 }
 
@@ -151,7 +148,9 @@ h1 {
   text-decoration: none;
   font-weight: 700;
   padding: 12px 18px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .btn-wa:hover {

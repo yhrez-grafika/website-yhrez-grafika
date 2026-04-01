@@ -46,9 +46,7 @@ body {
 }
 
 .clients-section {
-  background:
-    radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 34%, rgba(255, 255, 255, 0) 62%),
-    linear-gradient(180deg, #5f0015 0%, #721d3d 42%, #5b1b55 72%, #3f2b77 100%) !important;
+  background: radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 34%, rgba(255, 255, 255, 0) 62%), linear-gradient(180deg, #5f0015 0%, #721d3d 42%, #5b1b55 72%, #3f2b77 100%) !important;
 }
 
 .clients-logos {
@@ -107,6 +105,63 @@ body {
   background: linear-gradient(135deg, var(--maroon-800) 0%, var(--maroon-900) 100%) !important;
 }
 
+/* Contact social/actions: keep widths aligned and avoid overlapping old rules */
+.contact-social-actions {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 15px auto !important;
+  text-align: center !important;
+}
+
+.contact-social-actions .social-title {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contact-social-grid {
+  width: 100%;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  justify-content: initial !important;
+  align-items: stretch !important;
+}
+
+.contact-social-grid .social-link {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  min-height: 48px;
+}
+
+.store-direction-wrapper {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+
+.store-direction-btn {
+  width: 100%;
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #4285f4;
+  color: #ffffff !important;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.store-direction-btn:hover {
+  background-color: #2d6be0;
+}
+
 @media (max-width: 768px) {
   .testimonial-card,
   .contact-container-new,
@@ -118,5 +173,14 @@ body {
 
   .testimonial-card {
     background: #ffffff !important;
+  }
+
+  .contact-social-actions {
+    max-width: 300px;
+    text-align: center !important;
+  }
+
+  .contact-social-grid {
+    justify-content: initial !important;
   }
 }
