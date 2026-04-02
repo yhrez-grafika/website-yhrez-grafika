@@ -5,24 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Promo & Info Terbaru - Yh'rez Grafika</title>
     <meta name="description" content="Lihat promo dan info terbaru Yh'rez Grafika: jilid softcover, nota NCR, kalender meja, jilid skripsi, booklet, jilid spiral, daftar menu, dan kartu nama." />
+
     <link rel="icon" type="image/png" href="../logosaya/favicon.png" />
 
+    <!-- Preload Fonts -->
     <link rel="preload" href="../webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../webfonts/poppins-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../webfonts/roboto-v51-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
 
+    <!-- CSS Files (all.min.css ditambahkan agar ikon muncul) -->
+    <link rel="stylesheet" href="../css/all.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16501611888"></script>
+    <!-- Google Tag (gtag.js) - Bersih dari Error -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-32X026181B"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
+
+      // Konfigurasi Analytics dan Google Ads
+      gtag("config", "G-32X026181B");
       gtag("config", "AW-16501611888");
 
+      // Fungsi Tracking Konversi Google Ads
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof url !== "undefined") {
@@ -31,82 +40,11 @@
         };
         gtag("event", "conversion", {
           send_to: "AW-16501611888/Mt0ECKmeol8cEPC6yrw9",
-          event_callback: callback,
+          event_callback: callback
         });
         return false;
       }
     </script>
-
-    <link rel="stylesheet" href="../css/all.min.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-
-    <style>
-      .promo-page-wrap {
-        padding-top: 20px;
-      }
-
-      .promo-image a {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-
-      .promo-title-link {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .promo-title-link:hover {
-        color: #0055ff;
-      }
-
-      .promo-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .promo-detail-btn {
-        display: inline-block;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 8px 10px;
-        border-radius: 8px;
-        background: #1d2f8f;
-        color: #fff;
-        font-size: 0.9rem;
-        line-height: 1.2;
-        white-space: nowrap;
-      }
-
-      .promo-detail-btn:hover {
-        background: #14246b;
-      }
-
-      @media (max-width: 768px) {
-        .promo-detail-btn {
-          padding: 7px 8px;
-          font-size: 0.82rem;
-        }
-      }
-
-      .promo-back-wrap {
-        text-align: center;
-        margin-top: 8px;
-      }
-
-      .promo-back-wrap .btn-primary {
-        display: inline-block;
-      }
-
-      .promo-page-footer {
-        text-align: center;
-        color: #666;
-        padding: 24px 16px 36px;
-        font-size: 14px;
-      }
-    </style>
   </head>
   <body>
     <main id="main-content" class="promo-page-wrap">
@@ -294,6 +232,6 @@
       </section>
     </main>
 
-    <footer class="promo-page-footer">&copy; 2026 Yh'rez Grafika. Semua hak dilindungi.</footer>
+    <footer class="promo-page-footer footer-modern">&copy; 2026 Yh'rez Grafika. Semua hak dilindungi.</footer>
   </body>
 </html>
