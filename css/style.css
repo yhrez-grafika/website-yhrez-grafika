@@ -1036,15 +1036,15 @@ footer h3 span {
   font-weight: 700;
   letter-spacing: 0.2px;
   color: #ffffff;
-  background: linear-gradient(135deg, #1a73e8, #4285f4);
-  box-shadow: 0 6px 14px rgba(26, 115, 232, 0.28);
+  background: #1d2f8f;
+  box-shadow: 0 6px 14px rgba(29, 47, 143, 0.32);
   transition:
     transform 0.25s ease,
     opacity 0.25s ease;
 }
 
 .store-direction-btn:hover {
-  background: linear-gradient(135deg, #1765cc, #1a73e8);
+  background: #172570;
   transform: translateY(-2px);
   opacity: 0.95;
 }
