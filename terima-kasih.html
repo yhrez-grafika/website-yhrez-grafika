@@ -29,25 +29,37 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         display: inline-block;
       }
+      .brand-logo {
+        width: 105px;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+      }
       h1 {
-        color: #2c3e50;
+        color: #800020;
       }
       p {
-        color: #7f8c8d;
+        color: #000000;
       }
       .btn {
         display: inline-block;
         margin-top: 20px;
         padding: 10px 20px;
-        background-color: #3498db;
+        background: linear-gradient(135deg, #5a0f18, #800020);
         color: white;
         text-decoration: none;
         border-radius: 5px;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.05);
       }
     </style>
   </head>
   <body>
     <div class="card">
+      <img src="images/logosaya/logo.webp" alt="Logo Yh'rez Grafika" class="brand-logo" />
       <h1>Terima Kasih!</h1>
       <p>Pesan Anda telah kami terima. Admin Yh'rez Grafika akan segera menghubungi Anda melalui WhatsApp.</p>
       <a href="index.html" class="btn">Silahkan kembali ke Beranda</a>
