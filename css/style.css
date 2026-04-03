@@ -934,14 +934,22 @@ footer h3 span {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.item-text h4,
-.social-wrapper h4 {
+.item-text h4 {
   font-size: 0.85rem;
-  color: #6272a4;
+  color: #800020;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 8px;
   font-weight: 600;
+}
+
+.social-wrapper h4 {
+  font-size: 0.85rem;
+  color: #800020;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 .item-text p {
   font-size: 1.15rem;
