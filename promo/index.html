@@ -32,16 +32,29 @@
       gtag("config", "AW-16501611888");
 
       // Fungsi Tracking Konversi Google Ads
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof url !== "undefined") {
-            window.location = url;
+      function gtag_report_conversion(url, thankYouUrl) {
+        if (typeof url !== "undefined" && url && typeof thankYouUrl !== "undefined" && thankYouUrl) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+        var redirected = false;
+        var goToThankYou = function () {
+          if (redirected) return;
+          redirected = true;
+          if (typeof thankYouUrl !== "undefined" && thankYouUrl) {
+            window.location.href = thankYouUrl;
           }
         };
+
         gtag("event", "conversion", {
           send_to: "AW-16501611888/Mt0ECKmeol8cEPC6yrw9",
-          event_callback: callback,
+          event_callback: goToThankYou,
         });
+
+        if (typeof thankYouUrl !== "undefined" && thankYouUrl) {
+          setTimeout(goToThankYou, 800);
+        }
+
         return false;
       }
     </script>
@@ -70,7 +83,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Jilid%20Softcover."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Jilid%20Softcover.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -91,7 +104,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Nota%20NCR%20atau%20Surat%20Jalan."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Nota%20NCR%20atau%20Surat%20Jalan.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -112,7 +125,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Kalender%20Meja%20Custom."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Kalender%20Meja%20Custom.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -133,7 +146,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Jilid%20Skripsi."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Jilid%20Skripsi.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -154,7 +167,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Booklet."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Booklet.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -175,7 +188,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Jilid%20Spiral%20Kawat."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Jilid%20Spiral%20Kawat.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -196,7 +209,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Daftar%20Menu."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Daftar%20Menu.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -217,7 +230,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Kartu%20Nama."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Kartu%20Nama.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -238,7 +251,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Leaflet%20atau%20Brosur%20Lipat."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Leaflet%20atau%20Brosur%20Lipat.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -259,7 +272,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Undangan."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Cetak%20Undangan.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -280,7 +293,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Sticker%20Label%20Kemasan."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Sticker%20Label%20Kemasan.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -301,7 +314,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Brosur%20atau%20Flyer."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Brosur%20atau%20Flyer.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -322,7 +335,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Print%20Dokumen."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Print%20Dokumen.');"
+                  onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');"
                   class="btn-promo"
                   >Chat WhatsApp</a
                 >
@@ -341,7 +354,7 @@
               <div class="promo-actions">
                 <a class="promo-detail-btn" href="/produk/nametag/index.html">Lihat Detail Produk</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Nametag." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Nametag.');" class="btn-promo"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20mau%20tanya%20promo%20Nametag." onclick="return gtag_report_conversion(this.href,'../terima-kasih.html');" class="btn-promo"
                   >Chat WhatsApp</a
                 >
               </div>

@@ -21,17 +21,28 @@
       gtag("js", new Date());
       gtag("config", "AW-16501611888");
 
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof url !== "undefined") {
-            window.location = url;
+      function gtag_report_conversion(url, thankYouUrl) {
+        if (typeof url !== "undefined" && url && typeof thankYouUrl !== "undefined" && thankYouUrl) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+        var redirected = false;
+        var goToThankYou = function () {
+          if (redirected) return;
+          redirected = true;
+          if (typeof thankYouUrl !== "undefined" && thankYouUrl) {
+            window.location.href = thankYouUrl;
           }
         };
 
         gtag("event", "conversion", {
           send_to: "AW-16501611888/Mt0ECKmeoI8cEPC6yrw9",
-          event_callback: callback,
+          event_callback: goToThankYou,
         });
+
+        if (typeof thankYouUrl !== "undefined" && thankYouUrl) {
+          setTimeout(goToThankYou, 800);
+        }
 
         return false;
       }
@@ -103,7 +114,7 @@
             <!-- tombol-whatsapp -->
             <a
               href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika,%20saya%20mau%20tanya%20tentang%20Cetak%20Nota/Kwitansi/Surat%20Jalan"
-              onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika,%20saya%20mau%20tanya%20tentang%20Cetak%20Nota/Kwitansi/Surat%20Jalan');"
+              onclick="return gtag_report_conversion(this.href,'../../terima-kasih.html');"
               class="btn-wa"
             >
               Hubungi Kami ke WA

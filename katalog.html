@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -29,6 +29,32 @@
       gtag("js", new Date());
       gtag("config", "G-32X026181B");
       gtag("config", "AW-16501611888");
+
+      function gtag_report_conversion(url, thankYouUrl) {
+        if (typeof url !== "undefined" && url && typeof thankYouUrl !== "undefined" && thankYouUrl) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+        var redirected = false;
+        var goToThankYou = function () {
+          if (redirected) return;
+          redirected = true;
+          if (typeof thankYouUrl !== "undefined" && thankYouUrl) {
+            window.location.href = thankYouUrl;
+          }
+        };
+
+        gtag("event", "conversion", {
+          send_to: "AW-16501611888/Mt0ECKmeol8cEPC6yrw9",
+          event_callback: goToThankYou,
+        });
+
+        if (typeof thankYouUrl !== "undefined" && thankYouUrl) {
+          setTimeout(goToThankYou, 800);
+        }
+
+        return false;
+      }
     </script>
 
     <!-- moved-featured-style -->
@@ -120,7 +146,7 @@
               <div class="product-actions">
                 <a href="/produk/jilid-softcover/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Softcover." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Softcover.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Softcover." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -136,7 +162,7 @@
               <div class="product-actions">
                 <a href="/produk/jilid-hardcover/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Hardcover." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Hardcover.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Hardcover." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -152,7 +178,7 @@
               <div class="product-actions">
                 <a href="/produk/jilid-spiral-kawat/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Spiral%20Kawat." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Spiral%20Kawat.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Jilid%20Spiral%20Kawat." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -170,7 +196,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Nota%20%2F%20NCR%20%2F%20Kwitansi."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Nota%20%2F%20NCR%20%2F%20Kwitansi.');"
+                  onclick="return gtag_report_conversion(this.href,'terima-kasih.html');"
                   class="btn-wa"
                   >Pesan via WA</a
                 >
@@ -187,7 +213,7 @@
               <div class="product-actions">
                 <a href="/produk/brosur-flyer/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Brosur%20%2F%20Flyer." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Brosur%20%2F%20Flyer.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Brosur%20%2F%20Flyer." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -205,7 +231,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Leaflet%20%2F%20Brosur%20Lipat."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Leaflet%20%2F%20Brosur%20Lipat.');"
+                  onclick="return gtag_report_conversion(this.href,'terima-kasih.html');"
                   class="btn-wa"
                   >Pesan via WA</a
                 >
@@ -222,7 +248,7 @@
               <div class="product-actions">
                 <a href="/produk/kartu-nama/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Kartu%20Nama." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Kartu%20Nama.');" class="btn-wa">Pesan via WA</a>
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Kartu%20Nama." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa">Pesan via WA</a>
               </div>
             </div>
           </article>
@@ -236,7 +262,7 @@
               <div class="product-actions">
                 <a href="/produk/kalender-meja/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Kalender%20Meja." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Kalender%20Meja.');" class="btn-wa">Pesan via WA</a>
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Kalender%20Meja." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa">Pesan via WA</a>
               </div>
             </div>
           </article>
@@ -250,7 +276,7 @@
               <div class="product-actions">
                 <a href="/produk/booklet-modul/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Booklet%20%2F%20Modul." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Booklet%20%2F%20Modul.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Booklet%20%2F%20Modul." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -266,7 +292,7 @@
               <div class="product-actions">
                 <a href="/produk/daftar-menu/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Daftar%20Menu." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Daftar%20Menu.');" class="btn-wa">Pesan via WA</a>
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Daftar%20Menu." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa">Pesan via WA</a>
               </div>
             </div>
           </article>
@@ -280,7 +306,7 @@
               <div class="product-actions">
                 <a href="/produk/stempel-flash/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Stempel%20Flash." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Stempel%20Flash.');" class="btn-wa">Pesan via WA</a>
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Stempel%20Flash." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa">Pesan via WA</a>
               </div>
             </div>
           </article>
@@ -294,7 +320,7 @@
               <div class="product-actions">
                 <a href="/produk/plakat-akrilik/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Plakat%20Akrilik." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Plakat%20Akrilik.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Plakat%20Akrilik." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -310,7 +336,7 @@
               <div class="product-actions">
                 <a href="/produk/medali-akrilik/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Medali%20Akrilik." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Medali%20Akrilik.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Medali%20Akrilik." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -328,7 +354,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Gantungan%20Kunci%20(Gaci)."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Gantungan%20Kunci%20(Gaci).');"
+                  onclick="return gtag_report_conversion(this.href,'terima-kasih.html');"
                   class="btn-wa"
                   >Pesan via WA</a
                 >
@@ -345,7 +371,7 @@
               <div class="product-actions">
                 <a href="/produk/nametag/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Nametag%20custom." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Nametag%20custom.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Nametag%20custom." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -361,7 +387,7 @@
               <div class="product-actions">
                 <a href="/produk/papan-nama-meja/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Papan%20Nama%20Meja." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Papan%20Nama%20Meja.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Papan%20Nama%20Meja." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -379,7 +405,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Sticker%20Label%20Kemasan."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Sticker%20Label%20Kemasan.');"
+                  onclick="return gtag_report_conversion(this.href,'terima-kasih.html');"
                   class="btn-wa"
                   >Pesan via WA</a
                 >
@@ -396,7 +422,7 @@
               <div class="product-actions">
                 <a href="/produk/undangan/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Undangan%20custom." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Undangan%20custom.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Undangan%20custom." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -412,7 +438,7 @@
               <div class="product-actions">
                 <a href="/produk/print-documen/index.html" class="btn-detail">Lihat Detail</a>
                 <!-- tombol-whatsapp -->
-                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Print%20Dokumen." onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Print%20Dokumen.');" class="btn-wa"
+                <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Print%20Dokumen." onclick="return gtag_report_conversion(this.href,'terima-kasih.html');" class="btn-wa"
                   >Pesan via WA</a
                 >
               </div>
@@ -430,7 +456,7 @@
                 <!-- tombol-whatsapp -->
                 <a
                   href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Sticker%20Cutting."
-                  onclick="return gtag_report_conversion('https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Sticker%20Cutting.');"
+                  onclick="return gtag_report_conversion(this.href,'terima-kasih.html');"
                   class="btn-wa"
                   >Pesan via WA</a
                 >
