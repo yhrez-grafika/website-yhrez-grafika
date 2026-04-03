@@ -121,11 +121,11 @@ body {
 }
 .brand-domain {
   font-size: 0.75rem;
-  color: #1d2f8f;
+  color: #800020;
 }
 
 .brand-domain i {
-  color: #1d2f8f;
+  color: #800020;
 }
 .nav-links {
   display: flex;

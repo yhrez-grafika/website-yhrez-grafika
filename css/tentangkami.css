@@ -112,9 +112,10 @@
 
 /* 4. Judul Section (Maron & Bold) */
 .history-title {
-  color: #1d2f8f !important;
+  color: #800020 !important;
   text-align: center !important;
   font-weight: 800 !important;
+  text-transform: uppercase !important;
   font-size: 1.5rem !important;
   margin-bottom: 25px !important;
   display: block !important;
@@ -208,4 +209,13 @@
 .page-breadcrumb a:hover,
 .page-breadcrumb a:focus-visible {
   text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .history-title {
+    white-space: nowrap !important;
+    font-size: clamp(0.88rem, 5vw, 1.08rem) !important;
+    letter-spacing: 0 !important;
+    line-height: 1.2 !important;
+  }
 }
