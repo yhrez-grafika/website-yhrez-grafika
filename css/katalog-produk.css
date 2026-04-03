@@ -6,7 +6,7 @@
   --brand: #e11d48;
   --brand-dark: #be123c;
   --line: #dbe3ee;
-  --wa: #25d366;
+  --wa: #059339;
   --wa-dark: #1ea854;
 }
 
@@ -175,13 +175,13 @@ h1 {
   margin: 0 0 6px;
   font-size: 0.96rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #264982;
 }
 
 .price-starting {
   margin: 0 0 8px;
   font-size: 0.94rem;
-  color: #0f172a;
+  color: #1b4096;
 }
 
 .price-starting strong {
