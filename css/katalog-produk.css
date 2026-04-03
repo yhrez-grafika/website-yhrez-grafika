@@ -136,18 +136,20 @@ h1 {
 }
 
 .btn-wa {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 50px;
-  width: 100%;
+  min-height: 44px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   border-radius: 10px;
   background: var(--wa);
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  padding: 12px 18px;
+  padding: 10px 16px;
   transition:
     transform 0.2s ease,
     background 0.2s ease;
@@ -367,12 +369,12 @@ h1 {
 footer {
   text-align: center;
   font-size: 13px;
-  color: #334155;
+  color: #f8fafc;
   margin-top: 24px;
   padding: 16px 14px;
   border-radius: 12px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #4b0017 0%, #7a102b 48%, #a3172f 100%);
+  border: 1px solid rgba(248, 250, 252, 0.18);
 }
 
 @media (max-width: 920px) {
