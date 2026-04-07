@@ -1,0 +1,45 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+/* Desktop View (Default) */
+gmpx-split-layout {
+  width: 100%;
+  height: 100vh; /* Tinggi penuh layar desktop */
+}
+
+/* KODE SAKTI UNTUK HP */
+@media (max-width: 768px) {
+  gmpx-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  /* Memaksa Slot Fixed (Form) ke Atas */
+  gmpx-split-layout [slot="fixed"] {
+    width: 100% !important;
+    height: auto !important;
+    flex: none !important;
+  }
+
+  /* Memaksa Slot Main (Peta) ke Bawah */
+  gmpx-split-layout [slot="main"] {
+    width: 100% !important;
+    height: 350px !important; /* Tinggi peta di HP */
+    min-height: 350px !important;
+    flex: none !important;
+  }
+
+  .panel {
+    padding: 20px !important;
+    gap: 12px !important;
+  }
+
+  /* Memperjelas input di HP */
+  input {
+    font-size: 16px !important; /* Mencegah auto-zoom di iPhone */
+    padding: 8px 0 !important;
+  }
+}

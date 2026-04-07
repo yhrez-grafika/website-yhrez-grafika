@@ -1034,25 +1034,29 @@ footer h3 span {
 
 .store-direction-btn {
   width: 100%;
-  display: inline-flex;
+  max-width: 320px; /* Tambahkan ini agar lebarnya terkunci sama dengan tombol bawah */
+  display: flex !important;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 16px;
-  border-radius: 10px;
+  padding: 12px 20px; /* Ukuran padding disamakan agar tidak terlalu 'gemuk' */
+  border-radius: 12px; /* Sesuaikan lengkungan sudutnya */
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.2px;
   color: #ffffff;
-  background: #1d2f8f;
-  box-shadow: 0 6px 14px rgba(29, 47, 143, 0.32);
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+  background: linear-gradient(60deg, #1467da, #205797);
+  margin: 0 auto; /* Pastikan dia tetap di tengah */
+
+  /* Box shadow diperhalus agar tidak terlihat lebih lebar dari tombol bawah */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  transition: 0.25s ease;
+  opacity: 1;
 }
 
 .store-direction-btn:hover {
-  background: #172570;
+  background: #177023;
   transform: translateY(-2px);
   opacity: 0.95;
 }
@@ -1060,7 +1064,6 @@ footer h3 span {
 .store-direction-btn i {
   font-size: 0.95rem;
 }
-
 
 /* --- GAYA PETA & AREA LAYANAN BARU --- */
 .map-location-container {
@@ -1771,7 +1774,6 @@ footer h3 span {
 }
 
 @media (max-width: 768px) {
-
   .clients-track img {
     width: 60px !important;
     height: 60px !important;
@@ -1780,8 +1782,6 @@ footer h3 span {
 
 /* --- Mobile Performance Guard: kurangi animasi non-kritis --- */
 @media (max-width: 768px), (hover: none), (pointer: coarse) {
-
-
   .hero h1,
   .hero-logo,
   .hours-box,
@@ -2075,4 +2075,47 @@ footer h3 span {
   .adv-card p {
     font-size: 0.76rem;
   }
+}
+
+.btn-pilih-alamat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(60deg, #1467da, #205797);
+  color: white !important;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px; /* Dibuat sedikit lebih melengkung agar sama dengan tombol ungu */
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px auto; /* Membuatnya ke tengah */
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan dipertebal agar sama */
+  text-transform: uppercase;
+
+  /* BAGIAN PENGATUR PANJANG TOMBOL */
+  width: 100%;
+  max-width: 320px; /* UBAH ANGKA INI: Coba 310px, 320px, atau 330px sampai pas */
+  box-sizing: border-box;
+}
+
+/* Efek saat cursor atau jari menyentuh tombol */
+.btn-pilih-alamat:hover {
+  /* Mengubah warna latar menjadi lebih gelap (Marun gelap contohnya) */
+  background: #172570 !important;
+
+  /* Membuat tombol sedikit bergeser ke atas agar terlihat 'hidup' */
+  transform: translateY(-2px);
+
+  /* Mengatur transparansi sedikit agar ada efek visual */
+  opacity: 0.95;
+
+  /* Menambah bayangan agar efek klik lebih terasa */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Pastikan ada transisi di class utama agar perubahannya halus */
+.btn-pilih-alamat {
+  transition: all 0.25s ease !important;
+  /* ... kode yang sudah ada sebelumnya ... */
 }

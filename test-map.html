@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Selection - Yh'rez Grafika</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Roboto, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      /* Pengaturan Layout */
+      #layout {
+        height: 100vh;
+        display: flex;
+      }
+
+      /* Style Form Panel */
+      .panel {
+        background: white;
+        box-sizing: border-box;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 400px; /* Ukuran form di desktop */
+      }
+
+      .sb-title {
+        font-weight: 500;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      /* Style Input */
+      input {
+        height: 35px;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      input:focus {
+        border-bottom: 2px solid #1a73e8;
+      }
+
+      .half-input-container {
+        display: flex;
+        gap: 10px;
+      }
+
+      .half-input {
+        flex: 1;
+        width: 0;
+      }
+
+      /* AGAR PETA MUNCUL (WAJIB) */
+      gmp-map {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+      gmpx-split-layout:not(:defined) {
+        visibility: hidden;
+      }
+      /* HEADER KEMBALI KE BERANDA */
+      .map-header {
+        background: #ffffff;
+        padding: 12px 15px;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #800020; /* Garis marun biar senada footer */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-back {
+        text-decoration: none !important;
+        color: #800020 !important;
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+      }
+
+      .btn-back i {
+        margin-right: 8px;
+      }
+
+      /* FOOTER MAP - VERSI FIXED */
+      .map-footer {
+        background: #800020 !important; /* Marun Solid */
+        background: linear-gradient(180deg, #800020 0%, #4d0013 100%) !important;
+        color: white !important;
+        padding: 30px 15px !important;
+        text-align: center !important; /* INI UNTUK CENTER */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        clear: both;
+      }
+
+      .footer-content {
+        display: block !important;
+        margin: 0 auto !important;
+      }
+
+      .footer-content h3 {
+        color: white !important;
+        margin: 10px 0 !important;
+        font-size: 16px !important;
+      }
+
+      .footer-content p {
+        color: #f0f0f0 !important;
+        margin: 5px 0 !important;
+        font-size: 12px !important;
+        line-height: 1.5;
+      }
+
+      /* LOGO FOOTER AGAR CENTER */
+      .footer-logo {
+        display: block !important;
+        margin: 0 auto 10px auto !important;
+        width: 60px !important;
+        height: auto;
+      }
+      /* --- GANTI SEMUA DI SINI --- */
+      .map-footer {
+        background: linear-gradient(180deg, #800020 0%, #4d0013 100%) !important;
+        color: white !important;
+        padding: 30px 15px !important;
+        text-align: center !important; /* Membuat teks ke tengah */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-family: sans-serif;
+      }
+
+      .footer-logo {
+        display: block !important;
+        margin: 0 auto 10px auto !important; /* Membuat logo ke tengah */
+        width: 60px !important;
+        height: auto;
+      }
+
+      .floating-wa {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px !important;
+        height: 50px !important;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+      }
+
+      .floating-wa img {
+        width: 30px !important;
+        height: 30px !important;
+        display: block;
+        margin: 0 auto;
+      }
+      /* --------------------------- */
+    </style>
+
+    <!-- LOAD GOOGLE MAPS LIBRARY -->
+    <script type="module">
+      import { APILoader } from "https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js";
+
+      async function initMap() {
+        // 1. Ambil Library
+        const { Autocomplete } = await APILoader.importLibrary("places");
+
+        const locationInput = document.getElementById("location-input");
+        const mapEl = document.querySelector("gmp-map");
+        const markerEl = document.querySelector("gmp-advanced-marker");
+
+        // 2. Setting Autocomplete (Fokus ke Palangka Raya)
+        const autocomplete = new Autocomplete(locationInput, {
+          fields: ["address_components", "geometry", "name", "formatted_address"],
+          types: ["establishment", "geocode"],
+          locationBias: { radius: 1000, center: { lat: -2.20912, lng: 113.90487 } },
+        });
+
+        // 3. Tunggu Peta Siap
+        await customElements.whenDefined("gmp-map");
+        const defaultPos = { lat: -2.20912, lng: 113.90487 };
+
+        // Arahkan ke Yh'rez Grafika saat buka
+        if (mapEl.innerMap) {
+          mapEl.innerMap.setCenter(defaultPos);
+          mapEl.innerMap.setZoom(17);
+        }
+        markerEl.position = defaultPos;
+
+        // 4. Update saat alamat dipilih
+        autocomplete.addListener("place_changed", () => {
+          const place = autocomplete.getPlace();
+          if (!place.geometry) return;
+
+          locationInput.value = `${place.formatted_address} (${place.name})`;
+          const location = place.geometry.location;
+
+          mapEl.innerMap.setCenter(location);
+          mapEl.innerMap.setZoom(18);
+          markerEl.position = location;
+        });
+
+        // 5. Default Isi Kolom
+        locationInput.value = "Jl. Sangga Buana II Selatan No.01, Palangka Raya (Yh'rez Grafika)";
+        document.getElementById("locality-input").value = "Palangka Raya";
+        document.getElementById("administrative_area_level_1-input").value = "Kalimantan Tengah";
+        document.getElementById("postal_code-input").value = "74874";
+        document.getElementById("country-input").value = "Indonesia";
+
+        // 6. Tombol WhatsApp Aktif
+        const btnKirim = document.querySelector("gmpx-icon-button");
+        btnKirim.addEventListener("click", () => {
+          const alamat = locationInput.value;
+          const detail = document.getElementById("subpremise-input").value || "-";
+          const kota = document.getElementById("locality-input").value;
+
+          const teks = `Halo Yh'rez Grafika, saya ingin mengirim pesanan ke alamat ini:\n\n📍 Alamat: ${alamat}\n🏠 Detail: ${detail}\n🌆 Kota: ${kota}`;
+          const pesan = encodeURIComponent(teks);
+
+          window.open(`https://wa.me/6281348520154?text=${pesan}`, "_blank");
+        });
+      }
+
+      initMap();
+    </script>
+  </head>
+  <body>
+    <div class="map-header">
+      <a href="index.html" class="btn-back"> <i class="fas fa-arrow-left"></i> Kembali ke Beranda </a>
+    </div>
+    <!-- API LOADER -->
+    <gmpx-api-loader key="AIzaSyAaYxEb9bHegSDp4aOTLlYIGN8e31uW1Xk"></gmpx-api-loader>
+
+    <gmpx-split-layout id="layout">
+      <!-- FORM SELECTION -->
+      <div class="panel" slot="fixed">
+        <div class="sb-title">
+          <img src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg" alt="" />
+          <span>Address Selection</span>
+        </div>
+
+        <input type="text" placeholder="Cari Alamat atau Nama Toko..." id="location-input" />
+        <input type="text" placeholder="Detail Alamat (Contoh: Samping Apotek)" id="subpremise-input" />
+        <input type="text" placeholder="Kota" id="locality-input" />
+
+        <div class="half-input-container">
+          <input type="text" class="half-input" placeholder="Provinsi" id="administrative_area_level_1-input" />
+          <input type="text" class="half-input" placeholder="Kode Pos" id="postal_code-input" />
+        </div>
+
+        <input type="text" placeholder="Negara" id="country-input" />
+
+        <gmpx-icon-button variant="filled">Kirim ke Alamat ini</gmpx-icon-button>
+      </div>
+
+      <!-- PETA -->
+      <gmp-map slot="main" map-id="5dfe61db1d7a2144b8ea1d14" gesture-handling="greedy">
+        <gmp-advanced-marker></gmp-advanced-marker>
+      </gmp-map>
+    </gmpx-split-layout>
+
+    <!-- FOOTER SERAGAM -->
+    <footer class="map-footer">
+      <div class="footer-content">
+        <img src="images/logosaya/logo.webp" alt="Logo Yh'rez Grafika" class="footer-logo" />
+        <h3>Yh'rez Grafika - Percetakan & Penjilitan</h3>
+        <p>WA: 0813-4852-0154 | Jl. Sangga Buana II Selatan No.1, Palangka Raya, Kalteng 74874</p>
+        <p class="copyright">© 2026 Yh'rez Grafika. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button (Opsional jika ingin ada tombol WA melayang) -->
+    <a href="https://wa.me/6281348520154" class="floating-wa" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+  </body>
+</html>
