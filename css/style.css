@@ -2102,7 +2102,7 @@ footer h3 span {
 /* Efek saat cursor atau jari menyentuh tombol */
 .btn-pilih-alamat:hover {
   /* Mengubah warna latar menjadi lebih gelap (Marun gelap contohnya) */
-  background: #172570 !important;
+  background: #c21111 !important;
 
   /* Membuat tombol sedikit bergeser ke atas agar terlihat 'hidup' */
   transform: translateY(-2px);
