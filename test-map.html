@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Address Selection - Yh'rez Grafika</title>
+    <title>Pilih Alamat Pengiriman- Yh'rez Grafika</title>
 
     <style>
       body {
@@ -30,12 +30,19 @@
       }
 
       .sb-title {
-        font-weight: 500;
-        font-size: 18px;
         display: flex;
         align-items: center;
         gap: 10px;
         margin-bottom: 10px;
+        color: #000000; /* Warna Maroon */
+        font-weight: bold; /* Teks Bold */
+        font-size: 1.1rem;
+      }
+
+      /* Tambahkan ini untuk mengubah warna icon pin menjadi merah */
+      .sb-title img {
+        filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(354deg) brightness(92%) contrast(121%);
+        width: 24px;
       }
 
       /* Style Input */
@@ -253,7 +260,7 @@
       <div class="panel" slot="fixed">
         <div class="sb-title">
           <img src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg" alt="" />
-          <span>Address Selection</span>
+          <span>Pilih Alamat Pengiriman</span>
         </div>
 
         <input type="text" placeholder="Cari Alamat atau Nama Toko..." id="location-input" />
