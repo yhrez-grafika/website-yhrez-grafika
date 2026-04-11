@@ -157,27 +157,6 @@
         height: auto;
       }
 
-      .floating-wa {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px !important;
-        height: 50px !important;
-        background-color: #25d366;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        z-index: 9999;
-      }
-
-      .floating-wa img {
-        width: 30px !important;
-        height: 30px !important;
-        display: block;
-        margin: 0 auto;
-      }
       /* --------------------------- */
     </style>
 
@@ -238,7 +217,7 @@
           const detail = document.getElementById("subpremise-input").value || "-";
           const kota = document.getElementById("locality-input").value;
 
-          const teks = `Halo Yh'rez Grafika, saya ingin mengirim pesanan ke alamat ini:\n\n📍 Alamat: ${alamat}\n🏠 Detail: ${detail}\n🌆 Kota: ${kota}`;
+          const teks = `Halo Yh'rez Grafika, saya ingin mengirim pesanan ke alamat ini:\n\nAlamat: ${alamat}\nDetail: ${detail}\nKota: ${kota}`;
           const pesan = encodeURIComponent(teks);
 
           window.open(`https://wa.me/6281348520154?text=${pesan}`, "_blank");
@@ -289,13 +268,11 @@
         <img src="images/logosaya/logo.webp" alt="Logo Yh'rez Grafika" class="footer-logo" />
         <h3>Yh'rez Grafika - Percetakan & Penjilitan</h3>
         <p>WA: 0813-4852-0154 | Jl. Sangga Buana II Selatan No.1, Palangka Raya, Kalteng 74874</p>
-        <p class="copyright">© 2026 Yh'rez Grafika. All Rights Reserved.</p>
+        <p class="copyright">&copy; 2026 Yh'rez Grafika. All Rights Reserved.</p>
       </div>
     </footer>
 
-    <!-- Floating WhatsApp Button (Opsional jika ingin ada tombol WA melayang) -->
-    <a href="https://wa.me/6281348520154" class="floating-wa" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    </a>
+    <script src="/js/asisten-pemandu.js" defer></script>
   </body>
 </html>
+

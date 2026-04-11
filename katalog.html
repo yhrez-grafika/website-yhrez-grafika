@@ -59,6 +59,11 @@
 
     <!-- moved-featured-style -->
     <style>
+      /* Perbaikan Global: Memastikan area gambar tidak menghalangi klik pada tombol di bawahnya */
+      .product-img {
+        pointer-events: none;
+      }
+
       .featured-section .product-info h3 a {
         color: inherit;
         text-decoration: none;
@@ -71,28 +76,49 @@
       .product-actions {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 12px;
         margin-top: auto;
+        position: relative;
+        z-index: 10; /* Menghindari tumpang tindih dengan kontainer gambar */
       }
 
       .product-actions .btn-wa,
       .product-actions .btn-detail {
         margin-top: 0 !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px !important; /* Perbesar Area Klik (Hitbox) untuk jempol di HP */
+        padding: 12px 20px !important;
+        border-radius: 8px !important;
+        width: 100%;
+        transition: transform 0.2s ease, background-color 0.2s ease, filter 0.2s ease !important;
       }
 
       .btn-detail {
-        display: inline-block;
         background: #062b75;
         color: #ffffff !important;
-        text-align: center;
-        padding: 12px 20px;
-        border-radius: 6px;
         text-decoration: none;
         font-weight: bold;
       }
 
       .btn-detail:hover {
         background: #003fb8;
+      }
+
+      /* Efek Visual saat tombol ditekan (touch) di HP */
+      .btn-detail:active,
+      .product-actions .btn-wa:active {
+        transform: scale(0.96) !important;
+        filter: brightness(0.85);
+      }
+
+      /* Z-Index Widget AI: Pastikan wrapper transparan terhadap klik agar tidak menghalangi tombol produk */
+      .yhrez-ai-widget, .ai-chat-widget {
+        pointer-events: none !important;
+      }
+      .yhrez-ai-widget *, .ai-chat-widget * {
+        pointer-events: auto !important;
       }
     </style>
   </head>
@@ -137,9 +163,9 @@
         </div>
         <div class="product-grid">
           <article class="product-card">
-            <a class="product-img" href="produk/jilid-softcover/index.html">
+            <div class="product-img">
               <img src="images/produk/jilid-softcover/softcover.webp" alt="Jasa Jilid Softcover" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/jilid-softcover/index.html">Jilid Softcover</a></h3>
               <p>Jilid rapi, kuat, dan presisi untuk skripsi, laporan magang, atau tugas akhir.</p>
@@ -151,9 +177,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/jilid-hardcover/index.html">
+            <div class="product-img">
               <img src="images/produk/jilid-hardcover/jilidskripsi.webp" alt="Jasa Jilid Hardcover" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/jilid-hardcover/index.html">Jilid Hardcover</a></h3>
               <p>Pilihan premium untuk skripsi, tesis, laporan perusahaan, dan arsip penting.</p>
@@ -165,9 +191,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/jilid-spiral-kawat/index.html">
+            <div class="product-img">
               <img src="images/produk/jilid-spiral/jilid-spiral.webp" alt="Jasa Jilid Spiral Kawat" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/jilid-spiral-kawat/index.html">Jilid Spiral Kawat</a></h3>
               <p>Bisa dibuka 360 derajat, cocok untuk modul kursus, laporan, dan buku kerja.</p>
@@ -179,9 +205,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/nota-ncr-kwitansi/index.html">
+            <div class="product-img">
               <img src="images/produk/nota/nota.webp" alt="Cetak Nota NCR" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/nota-ncr-kwitansi/index.html">Nota / NCR / Kwitansi</a></h3>
               <p>Form transaksi otomatis tembus untuk pembukuan UMKM yang lebih tertata.</p>
@@ -193,9 +219,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/brosur-flyer/index.html">
+            <div class="product-img">
               <img src="images/produk/brosur/Brosur.webp" alt="Cetak Brosur Flyer" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/brosur-flyer/index.html">Brosur / Flyer</a></h3>
               <p>Media promosi masal yang ekonomis dengan cetak tajam dan warna menarik.</p>
@@ -207,9 +233,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/leaflet-brosur-lipat/index.html">
+            <div class="product-img">
               <img src="images/produk/leaflet/leaflet.webp" alt="Cetak Leaflet Brosur Lipat" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/leaflet-brosur-lipat/index.html">Leaflet / Brosur Lipat</a></h3>
               <p>Format bifold/trifold untuk edukasi, kursus musik, hingga info layanan kesehatan.</p>
@@ -221,9 +247,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/kartu-nama/index.html">
+            <div class="product-img">
               <img src="images/produk/kartu-nama/Kartu-Nama.webp" alt="Cetak Kartu Nama" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/kartu-nama/index.html">Kartu Nama</a></h3>
               <p>Bangun personal branding profesional untuk tenaga kesehatan, organisasi, dan tim lapangan.</p>
@@ -235,9 +261,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/kalender-meja/index.html">
+            <div class="product-img">
               <img src="images/produk/kalender-meja/kalendermeja.webp" alt="Cetak Kalender Meja" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/kalender-meja/index.html">Kalender Meja</a></h3>
               <p>Branding usaha 365 hari penuh untuk kantor, kampus, dan relasi bisnis.</p>
@@ -249,9 +275,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/booklet-modul/index.html">
+            <div class="product-img">
               <img src="images/produk/cetak-booklet/cetak-buku.webp" alt="Cetak Booklet Modul" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/booklet-modul/index.html">Booklet / Modul</a></h3>
               <p>Solusi cetak modul pelatihan, materi workshop, dan panduan belajar musik.</p>
@@ -263,9 +289,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/daftar-menu/index.html">
+            <div class="product-img">
               <img src="images/produk/daftar-menu/daftar-menu.webp" alt="Cetak Daftar Menu" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/daftar-menu/index.html">Daftar Menu</a></h3>
               <p>Menu kuliner yang rapi, mudah dibaca, dan lebih tahan untuk operasional harian.</p>
@@ -277,9 +303,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/stempel-flash/index.html">
+            <div class="product-img">
               <img src="images/produk/stempel/stempel.webp" alt="Pembuatan Stempel Flash" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/stempel-flash/index.html">Stempel Flash</a></h3>
               <p>Praktis tanpa bantalan tinta, hasil cap tajam untuk kebutuhan administrasi.</p>
@@ -291,11 +317,11 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/plakat-akrilik/index.html">
-              <img src="../images/produk/plakat/plakat-akrilik.webp" alt="Plakat Akrilik Custom" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            <div class="product-img">
+              <img src="images/produk/plakat/plakat-akrilik.webp" alt="Plakat Akrilik Custom" loading="lazy" decoding="async" width="800" height="600" />
+            </div>
             <div class="product-info">
-              <h3><a href="/produk/plakat-akrilik/index.html">Plakat Akrilik</a></h3>
+              <h3><a href="produk/plakat-akrilik/index.html">Plakat Akrilik</a></h3>
               <p>Tampil mewah untuk wisuda, penghargaan, kenang-kenangan event, dan perusahaan.</p>
               <div class="product-actions">
                 <a href="produk/plakat-akrilik/index.html" class="btn-detail">Lihat Detail Produk</a>
@@ -305,37 +331,37 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/mendali-akrilik/index.html">
-              <img src="../images/produk/mendali-custom/mendali1.webp" alt="Mendali Akrilik" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            <div class="product-img">
+              <img src="images/produk/mendali-custom/mendali1.webp" alt="Medali Akrilik Custom" loading="lazy" decoding="async" width="800" height="600" />
+            </div>
             <div class="product-info">
-              <h3><a href="produk/mendali-akrilik/index.html">Mendali Akrilik Custom</a></h3>
+              <h3><a href="produk/medali-akrilik/index.html">Medali Akrilik Custom</a></h3>
               <p>Simbol apresiasi modern untuk lomba sekolah, komunitas, dan event organisasi.</p>
               <div class="product-actions">
-                <a href="produk/mendali-akrilik/index.html" class="btn-detail">Lihat Detail Produk</a>
+                <a href="produk/medali-akrilik/index.html" class="btn-detail">Lihat Detail Produk</a>
                 <!-- tombol-whatsapp -->
                 <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Medali%20Akrilik." onclick="return gtag_report_conversion(this.href, 'terima-kasih.html');" class="btn-wa">Pesan via WA</a>
               </div>
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/gantungan-kunci-gaci/index.html">
+            <div class="product-img">
               <img src="images/produk/gantungan-kunci/gantungan-kunci.webp" alt="Gantungan Kunci Gaci" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/gantungan-kunci-gaci/index.html">Gantungan Kunci (Gaci)</a></h3>
               <p>Souvenir akrilik kekinian untuk merchandise komunitas, kampanye, dan acara.</p>
               <div class="product-actions">
-                <a href="produk/gantungan-kunci-gaci/index.html" class="btn-detail">Lihat Detai Produk</a>
+                <a href="produk/gantungan-kunci-gaci/index.html" class="btn-detail">Lihat Detail Produk</a>
                 <!-- tombol-whatsapp -->
                 <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Gantungan%20Kunci%20(Gaci)." onclick="return gtag_report_conversion(this.href, 'terima-kasih.html');" class="btn-wa">Pesan via WA</a>
               </div>
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/nametag/index.html">
+            <div class="product-img">
               <img src="images/produk/nametag/nametag2.webp" alt="Cetak Nametag" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/nametag/index.html">Nametag</a></h3>
               <p>Identitas profesional untuk panitia, petugas lapangan, staff event, dan karyawan.</p>
@@ -347,9 +373,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/papan-nama-meja/index.html">
+            <div class="product-img">
               <img src="images/produk/papan-ruangan/papanruangan3.webp" alt="Papan Nama Meja" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/papan-nama-meja/index.html">Papan Nama Meja</a></h3>
               <p>Tingkatkan wibawa ruang pimpinan kantor, sekolah, dan instansi dengan identitas jabatan yang jelas.</p>
@@ -361,9 +387,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/sticker-label/index.html">
+            <div class="product-img">
               <img src="images/produk/sticker-label/stickerkemasan.webp" alt="Sticker Label Kemasan" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/sticker-label/index.html">Sticker Label Kemasan</a></h3>
               <p>Cocok untuk kemasan UMKM, tahan cuaca, dengan cutting presisi sesuai brand.</p>
@@ -375,9 +401,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/undangan/index.html">
+            <div class="product-img">
               <img src="images/produk/undangan/undangan1.webp" alt="Cetak Undangan" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/undangan/index.html">Undangan</a></h3>
               <p>Undangan custom untuk acara resmi, pernikahan, gathering, dan event komunitas.</p>
@@ -389,9 +415,9 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/print-documen/index.html">
+            <div class="product-img">
               <img src="images/hero/herobaru.webp" alt="Print Dokumen" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
               <h3><a href="produk/print-documen/index.html">Print Dokumen</a></h3>
               <p>Layanan print cepat untuk tugas kuliah, laporan kantor, dan kebutuhan dokumen harian.</p>
@@ -403,14 +429,14 @@
             </div>
           </article>
           <article class="product-card">
-            <a class="product-img" href="produk/sticker-label-cutting/index.html">
+            <div class="product-img">
               <img src="images/produk/sticker-cutting/cutting5.webp" alt="Sticker Cutting Custom" loading="lazy" decoding="async" width="800" height="600" />
-            </a>
+            </div>
             <div class="product-info">
-              <h3><a href="produk/sticker-label-cutting/index.html">Sticker Cutting</a></h3>
+              <h3><a href="produk/sticker-cutting/index.html">Sticker Cutting</a></h3>
               <p>Sticker cutting presisi untuk logo, branding produk, label kemasan, dan kebutuhan promosi.</p>
               <div class="product-actions">
-                <a href="produk/sticker-label-cutting/index.html" class="btn-detail">Lihat Detail Produk</a>
+                <a href="produk/sticker-cutting/index.html" class="btn-detail">Lihat Detail Produk</a>
                 <!-- tombol-whatsapp -->
                 <a href="https://wa.me/6281348520154?text=Halo%20Yhrez%20Grafika%2C%20saya%20mau%20order%20Sticker%20Cutting." onclick="return gtag_report_conversion(this.href, 'terima-kasih.html');" class="btn-wa">Pesan via WA</a>
               </div>
@@ -433,10 +459,6 @@
       <span class="close-modal">&times;</span>
       <img class="modal-content" id="modalImage" src="" alt="Pratinjau portofolio percetakan Yh'rez Grafika" loading="lazy" decoding="async" width="900" height="1200" />
     </div>
-
-    <a href="https://wa.me/6281348520154?text=Halo%20Yh%27rez%20Grafika%2C%20saya%20lihat%20dari%20Google%20Ads.%20Mau%20tanya-tanya%20soal%20jasa%20percetakan%20nih..." class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Admin">
-      <img src="images/icon/WA.webp" alt="Ikon WhatsApp Yh'rez Grafika" class="wa-icon" loading="lazy" decoding="async" width="189" height="189" />
-    </a>
 
     <script src="js/script.min.js" defer></script>
 
@@ -473,6 +495,6 @@
         "logo": "https://yhrezgrafika.com/images/logosaya/google.webp"
       }
     </script>
-    <script src="js/wa-notif.js" defer></script>
+    <script src="/js/asisten-pemandu.js" defer></script>
   </body>
 </html>

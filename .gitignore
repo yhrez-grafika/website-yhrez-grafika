@@ -1,0 +1,8 @@
+config.env
+# Environment variables (SANGAT PENTING AGAR API KEY TIDAK BOCOR)
+.env
+debug.log
+.env.local
+
+# Node modules (jika menggunakan npm)
+node_modules/
